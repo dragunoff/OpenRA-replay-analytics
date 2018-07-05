@@ -1,0 +1,155 @@
+{
+  "name": "Tiberian Dawn",
+  "features": ["icon", "factions", "buildings", "defences"],
+  "factions": {
+    "random": {
+      "id": "rangom",
+      "name": "Random"
+    },
+    "gdi": {
+      "id": "gdi",
+      "name": "GDI"
+    },
+    "nod": {
+      "id": "nod",
+      "name": "Nod"
+    }
+  },
+  "actors": {
+    "fact": {
+      "id": "fact",
+      "type": "mcv",
+      "name": "Construction Yard"
+    },
+    "fact.gdi": {
+      "id": "fact.gdi",
+      "type": "mcv",
+      "name": "Construction Yard (GDI)"
+    },
+    "fact.nod": {
+      "id": "fact.nod",
+      "type": "mcv",
+      "name": "Construction Yard (Nod)"
+    },
+    "nuke": {
+      "id": "nuke",
+      "type": "building",
+      "name": "Power Plant"
+    },
+    "nuk2": {
+      "id": "nuk2",
+      "type": "building",
+      "name": "Advanced Power Plant"
+    },
+    "proc": {
+      "id": "proc",
+      "type": "building",
+      "name": "Tiberium Refinery"
+    },
+    "pyle": {
+      "id": "pyle",
+      "type": "building",
+      "name": "Barracks"
+    },
+    "hand": {
+      "id": "hand",
+      "type": "building",
+      "name": "Hand of Nod"
+    },
+    "afld": {
+      "id": "afld",
+      "type": "building",
+      "name": "Airstrip"
+    },
+    "weap": {
+      "id": "weap",
+      "type": "building",
+      "name": "Weapons Factory"
+    },
+    "hpad": {
+      "id": "hpad",
+      "type": "building",
+      "name": "Helipad"
+    },
+    "fix": {
+      "id": "fix",
+      "type": "building",
+      "name": "Repair Facility"
+    },
+    "hq": {
+      "id": "hq",
+      "type": "building",
+      "name": "Communications Center"
+    },
+    "eye": {
+      "id": "eye",
+      "type": "building",
+      "name": "Advanced Communications Center"
+    },
+    "tmpl": {
+      "id": "tmpl",
+      "type": "building",
+      "name": "Temple of Nod"
+    },
+    "silo": {
+      "id": "silo",
+      "type": "defence",
+      "name": "Tiberium Silo"
+    },
+    "sbag": {
+      "id": "sbag",
+      "type": "defence",
+      "name": "Sandbag Wall"
+    },
+    "fenc": {
+      "id": "fenc",
+      "type": "defence",
+      "name": "Wire Fence"
+    },
+    "brik": {
+      "id": "brik",
+      "type": "defence",
+      "name": "Concrete Wall"
+    },
+    "cycl": {
+      "id": "cycl",
+      "type": "defence",
+      "name": "Chain-Link Barrier"
+    },
+    "barb": {
+      "id": "barb",
+      "type": "defence",
+      "name": "Barbed-Wire Fence"
+    },
+    "wood": {
+      "id": "wood",
+      "type": "defence",
+      "name": "Wooden Fence"
+    },
+    "gtwr": {
+      "id": "gtwr",
+      "type": "defence",
+      "name": "Guard Tower"
+    },
+    "atwr": {
+      "id": "atwr",
+      "type": "defence",
+      "name": "Advanced Guard Tower"
+    },
+    "gun": {
+      "id": "gun",
+      "type": "defence",
+      "name": "Turret"
+    },
+    "sam": {
+      "id": "sam",
+      "type": "defence",
+      "name": "SAM Site"
+    },
+    "obli": {
+      "id": "obli",
+      "type": "defence",
+      "name": "Obelisk of Light"
+    }
+  }
+}

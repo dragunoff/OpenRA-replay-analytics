@@ -1,0 +1,1157 @@
+{
+  "mod": "ra",
+  "version": "release-20180307",
+  "server_name": "64H - RAGL Official - II",
+  "map": {
+    "name": "Badger Hills (RAGL:S5)",
+    "hash": "eab694bead5ef72c9eb005cc77944fc2c638e6b8"
+  },
+  "game": {
+    "type": "1v1",
+    "start_time": "2018-06-13T09:20:19+00:00",
+    "end_time": "2018-06-13T09:37:27+00:00",
+    "duration": {
+      "formatted": "00:17:08",
+      "msec": 1028000
+    },
+    "options": {
+      "explored_map": true,
+      "speed": "default",
+      "starting_cash": 5000,
+      "starting_units": "none",
+      "fog_enabled": true,
+      "cheats_enabled": false,
+      "kill_bounty_enabled": true,
+      "allow_undeploy": true,
+      "crates_enabled": false,
+      "build_off_allies": true,
+      "restrict_build_radius": true,
+      "short_game": true,
+      "techlevel": "unrestricted"
+    }
+  },
+  "clients": [
+    {
+      "index": "958",
+      "name": "Echo",
+      "preferred_color": "B3F7F8",
+      "color": "B3F7F8",
+      "spawn": {
+        "random": true,
+        "point": "0"
+      },
+      "faction": {
+        "chosen": "russia",
+        "actual": "russia"
+      },
+      "ip": null,
+      "team": null,
+      "is_bot": false,
+      "is_admin": true,
+      "is_player": true,
+      "is_winner": true,
+      "build": [
+        {
+          "structure": "powr",
+          "game_time": {
+            "formatted": "00:00:09",
+            "msec": 9600
+          },
+          "placement": {
+            "x": 23,
+            "y": 14
+          }
+        },
+        {
+          "structure": "proc",
+          "game_time": {
+            "formatted": "00:00:45",
+            "msec": 45120
+          },
+          "placement": {
+            "x": 26,
+            "y": 14
+          }
+        },
+        {
+          "structure": "barr",
+          "game_time": {
+            "formatted": "00:00:58",
+            "msec": 58800
+          },
+          "placement": {
+            "x": 16,
+            "y": 13
+          }
+        },
+        {
+          "structure": "weap",
+          "game_time": {
+            "formatted": "00:01:47",
+            "msec": 107640
+          },
+          "placement": {
+            "x": 22,
+            "y": 18
+          }
+        },
+        {
+          "structure": "powr",
+          "game_time": {
+            "formatted": "00:01:57",
+            "msec": 117120
+          },
+          "placement": {
+            "x": 18,
+            "y": 9
+          }
+        },
+        {
+          "structure": "proc",
+          "game_time": {
+            "formatted": "00:02:31",
+            "msec": 151680
+          },
+          "placement": {
+            "x": 29,
+            "y": 11
+          }
+        },
+        {
+          "structure": "dome",
+          "game_time": {
+            "formatted": "00:03:17",
+            "msec": 197520
+          },
+          "placement": {
+            "x": 15,
+            "y": 5
+          }
+        },
+        {
+          "structure": "afld",
+          "game_time": {
+            "formatted": "00:03:33",
+            "msec": 213960
+          },
+          "placement": {
+            "x": 12,
+            "y": 4
+          }
+        },
+        {
+          "structure": "apwr",
+          "game_time": {
+            "formatted": "00:03:51",
+            "msec": 231360
+          },
+          "placement": {
+            "x": 25,
+            "y": 9
+          }
+        },
+        {
+          "structure": "stek",
+          "game_time": {
+            "formatted": "00:04:28",
+            "msec": 268560
+          },
+          "placement": {
+            "x": 17,
+            "y": 4
+          }
+        },
+        {
+          "structure": "ftur",
+          "game_time": {
+            "formatted": "00:04:30",
+            "msec": 270720
+          },
+          "placement": {
+            "x": 26,
+            "y": 22
+          }
+        },
+        {
+          "structure": "apwr",
+          "game_time": {
+            "formatted": "00:04:42",
+            "msec": 282720
+          },
+          "placement": {
+            "x": 15,
+            "y": 21
+          }
+        },
+        {
+          "structure": "fix",
+          "game_time": {
+            "formatted": "00:05:22",
+            "msec": 322680
+          },
+          "placement": {
+            "x": 15,
+            "y": 18
+          }
+        },
+        {
+          "structure": "iron",
+          "game_time": {
+            "formatted": "00:05:43",
+            "msec": 343320
+          },
+          "placement": {
+            "x": 15,
+            "y": 4
+          }
+        },
+        {
+          "structure": "barr",
+          "game_time": {
+            "formatted": "00:05:56",
+            "msec": 356760
+          },
+          "placement": {
+            "x": 18,
+            "y": 23
+          }
+        },
+        {
+          "structure": "proc",
+          "game_time": {
+            "formatted": "00:06:58",
+            "msec": 418200
+          },
+          "placement": {
+            "x": 55,
+            "y": 18
+          }
+        },
+        {
+          "structure": "apwr",
+          "game_time": {
+            "formatted": "00:07:18",
+            "msec": 438000
+          },
+          "placement": {
+            "x": 53,
+            "y": 28
+          }
+        },
+        {
+          "structure": "tsla",
+          "game_time": {
+            "formatted": "00:07:19",
+            "msec": 439080
+          },
+          "placement": {
+            "x": 52,
+            "y": 30
+          }
+        },
+        {
+          "structure": "tsla",
+          "game_time": {
+            "formatted": "00:07:21",
+            "msec": 441360
+          },
+          "placement": {
+            "x": 52,
+            "y": 28
+          }
+        },
+        {
+          "structure": "ftur",
+          "game_time": {
+            "formatted": "00:07:34",
+            "msec": 454320
+          },
+          "placement": {
+            "x": 56,
+            "y": 32
+          }
+        },
+        {
+          "structure": "proc",
+          "game_time": {
+            "formatted": "00:07:50",
+            "msec": 470160
+          },
+          "placement": {
+            "x": 58,
+            "y": 25
+          }
+        },
+        {
+          "structure": "proc",
+          "game_time": {
+            "formatted": "00:09:24",
+            "msec": 564000
+          },
+          "placement": {
+            "x": 16,
+            "y": 39
+          }
+        },
+        {
+          "structure": "apwr",
+          "game_time": {
+            "formatted": "00:09:37",
+            "msec": 577080
+          },
+          "placement": {
+            "x": 49,
+            "y": 29
+          }
+        },
+        {
+          "structure": "tsla",
+          "game_time": {
+            "formatted": "00:09:37",
+            "msec": 577920
+          },
+          "placement": {
+            "x": 48,
+            "y": 27
+          }
+        },
+        {
+          "structure": "ftur",
+          "game_time": {
+            "formatted": "00:09:53",
+            "msec": 593280
+          },
+          "placement": {
+            "x": 49,
+            "y": 33
+          }
+        },
+        {
+          "structure": "apwr",
+          "game_time": {
+            "formatted": "00:10:08",
+            "msec": 608040
+          },
+          "placement": {
+            "x": 45,
+            "y": 33
+          }
+        },
+        {
+          "structure": "tsla",
+          "game_time": {
+            "formatted": "00:10:20",
+            "msec": 620760
+          },
+          "placement": {
+            "x": 49,
+            "y": 37
+          }
+        },
+        {
+          "structure": "ftur",
+          "game_time": {
+            "formatted": "00:10:35",
+            "msec": 635520
+          },
+          "placement": {
+            "x": 49,
+            "y": 36
+          }
+        },
+        {
+          "structure": "proc",
+          "game_time": {
+            "formatted": "00:10:44",
+            "msec": 644040
+          },
+          "placement": {
+            "x": 13,
+            "y": 40
+          }
+        },
+        {
+          "structure": "tsla",
+          "game_time": {
+            "formatted": "00:11:24",
+            "msec": 684480
+          },
+          "placement": {
+            "x": 47,
+            "y": 37
+          }
+        },
+        {
+          "structure": "tsla",
+          "game_time": {
+            "formatted": "00:12:01",
+            "msec": 721680
+          },
+          "placement": {
+            "x": 44,
+            "y": 35
+          }
+        },
+        {
+          "structure": "ftur",
+          "game_time": {
+            "formatted": "00:12:22",
+            "msec": 742800
+          },
+          "placement": {
+            "x": 24,
+            "y": 44
+          }
+        },
+        {
+          "structure": "barr",
+          "game_time": {
+            "formatted": "00:12:38",
+            "msec": 758760
+          },
+          "placement": {
+            "x": 22,
+            "y": 44
+          }
+        },
+        {
+          "structure": "barr",
+          "game_time": {
+            "formatted": "00:12:51",
+            "msec": 771840
+          },
+          "placement": {
+            "x": 24,
+            "y": 48
+          }
+        },
+        {
+          "structure": "tsla",
+          "game_time": {
+            "formatted": "00:13:20",
+            "msec": 800280
+          },
+          "placement": {
+            "x": 46,
+            "y": 37
+          }
+        },
+        {
+          "structure": "barr",
+          "game_time": {
+            "formatted": "00:13:32",
+            "msec": 812400
+          },
+          "placement": {
+            "x": 48,
+            "y": 37
+          }
+        },
+        {
+          "structure": "ftur",
+          "game_time": {
+            "formatted": "00:13:34",
+            "msec": 814320
+          },
+          "placement": {
+            "x": 27,
+            "y": 47
+          }
+        },
+        {
+          "structure": "barr",
+          "game_time": {
+            "formatted": "00:13:56",
+            "msec": 836160
+          },
+          "placement": {
+            "x": 25,
+            "y": 44
+          }
+        },
+        {
+          "structure": "tsla",
+          "game_time": {
+            "formatted": "00:14:01",
+            "msec": 841920
+          },
+          "placement": {
+            "x": 27,
+            "y": 45
+          }
+        },
+        {
+          "structure": "barr",
+          "game_time": {
+            "formatted": "00:14:34",
+            "msec": 874320
+          },
+          "placement": {
+            "x": 25,
+            "y": 46
+          }
+        },
+        {
+          "structure": "ftur",
+          "game_time": {
+            "formatted": "00:14:36",
+            "msec": 876240
+          },
+          "placement": {
+            "x": 28,
+            "y": 46
+          }
+        },
+        {
+          "structure": "apwr",
+          "game_time": {
+            "formatted": "00:14:46",
+            "msec": 886920
+          },
+          "placement": {
+            "x": 27,
+            "y": 49
+          }
+        },
+        {
+          "structure": "tsla",
+          "game_time": {
+            "formatted": "00:15:10",
+            "msec": 910920
+          },
+          "placement": {
+            "x": 31,
+            "y": 48
+          }
+        },
+        {
+          "structure": "apwr",
+          "game_time": {
+            "formatted": "00:15:26",
+            "msec": 926280
+          },
+          "placement": {
+            "x": 27,
+            "y": 53
+          }
+        },
+        {
+          "structure": "ftur",
+          "game_time": {
+            "formatted": "00:15:44",
+            "msec": 944640
+          },
+          "placement": {
+            "x": 24,
+            "y": 61
+          }
+        },
+        {
+          "structure": "barr",
+          "game_time": {
+            "formatted": "00:16:20",
+            "msec": 980280
+          },
+          "placement": {
+            "x": 66,
+            "y": 37
+          }
+        },
+        {
+          "structure": "tsla",
+          "game_time": {
+            "formatted": "00:16:21",
+            "msec": 981480
+          },
+          "placement": {
+            "x": 69,
+            "y": 41
+          }
+        }
+      ]
+    },
+    {
+      "index": "964",
+      "name": "Bravo",
+      "preferred_color": "2E4A57",
+      "color": "2E4A57",
+      "spawn": {
+        "random": null,
+        "point": "0"
+      },
+      "faction": {
+        "chosen": "random",
+        "actual": null
+      },
+      "ip": null,
+      "team": null,
+      "is_bot": false,
+      "is_admin": false,
+      "is_player": false,
+      "is_winner": false,
+      "build": [
+
+      ]
+    },
+    {
+      "index": "975",
+      "name": "Delta",
+      "preferred_color": "83F706",
+      "color": "83F706",
+      "spawn": {
+        "random": true,
+        "point": "0"
+      },
+      "faction": {
+        "chosen": "russia",
+        "actual": "russia"
+      },
+      "ip": "145.255.193.59",
+      "team": null,
+      "is_bot": false,
+      "is_admin": false,
+      "is_player": true,
+      "is_winner": false,
+      "build": [
+        {
+          "structure": "powr",
+          "game_time": {
+            "formatted": "00:00:10",
+            "msec": 10200
+          },
+          "placement": {
+            "x": 80,
+            "y": 79
+          }
+        },
+        {
+          "structure": "barr",
+          "game_time": {
+            "formatted": "00:00:24",
+            "msec": 24600
+          },
+          "placement": {
+            "x": 73,
+            "y": 76
+          }
+        },
+        {
+          "structure": "proc",
+          "game_time": {
+            "formatted": "00:01:00",
+            "msec": 60120
+          },
+          "placement": {
+            "x": 69,
+            "y": 75
+          }
+        },
+        {
+          "structure": "proc",
+          "game_time": {
+            "formatted": "00:01:37",
+            "msec": 97320
+          },
+          "placement": {
+            "x": 83,
+            "y": 79
+          }
+        },
+        {
+          "structure": "powr",
+          "game_time": {
+            "formatted": "00:01:47",
+            "msec": 107880
+          },
+          "placement": {
+            "x": 77,
+            "y": 73
+          }
+        },
+        {
+          "structure": "weap",
+          "game_time": {
+            "formatted": "00:02:37",
+            "msec": 157920
+          },
+          "placement": {
+            "x": 73,
+            "y": 71
+          }
+        },
+        {
+          "structure": "proc",
+          "game_time": {
+            "formatted": "00:03:16",
+            "msec": 196560
+          },
+          "placement": {
+            "x": 68,
+            "y": 79
+          }
+        },
+        {
+          "structure": "fix",
+          "game_time": {
+            "formatted": "00:03:47",
+            "msec": 227400
+          },
+          "placement": {
+            "x": 79,
+            "y": 73
+          }
+        },
+        {
+          "structure": "powr",
+          "game_time": {
+            "formatted": "00:03:58",
+            "msec": 238800
+          },
+          "placement": {
+            "x": 78,
+            "y": 69
+          }
+        },
+        {
+          "structure": "barr",
+          "game_time": {
+            "formatted": "00:04:14",
+            "msec": 254280
+          },
+          "placement": {
+            "x": 78,
+            "y": 65
+          }
+        },
+        {
+          "structure": "proc",
+          "game_time": {
+            "formatted": "00:04:54",
+            "msec": 294960
+          },
+          "placement": {
+            "x": 88,
+            "y": 49
+          }
+        },
+        {
+          "structure": "barr",
+          "game_time": {
+            "formatted": "00:05:08",
+            "msec": 308520
+          },
+          "placement": {
+            "x": 90,
+            "y": 45
+          }
+        },
+        {
+          "structure": "powr",
+          "game_time": {
+            "formatted": "00:05:21",
+            "msec": 321480
+          },
+          "placement": {
+            "x": 92,
+            "y": 47
+          }
+        },
+        {
+          "structure": "ftur",
+          "game_time": {
+            "formatted": "00:05:24",
+            "msec": 324960
+          },
+          "placement": {
+            "x": 83,
+            "y": 55
+          }
+        },
+        {
+          "structure": "proc",
+          "game_time": {
+            "formatted": "00:06:33",
+            "msec": 393360
+          },
+          "placement": {
+            "x": 51,
+            "y": 46
+          }
+        },
+        {
+          "structure": "ftur",
+          "game_time": {
+            "formatted": "00:06:48",
+            "msec": 408000
+          },
+          "placement": {
+            "x": 86,
+            "y": 83
+          }
+        },
+        {
+          "structure": "barr",
+          "game_time": {
+            "formatted": "00:06:51",
+            "msec": 411840
+          },
+          "placement": {
+            "x": 47,
+            "y": 45
+          }
+        },
+        {
+          "structure": "ftur",
+          "game_time": {
+            "formatted": "00:07:03",
+            "msec": 423600
+          },
+          "placement": {
+            "x": 50,
+            "y": 43
+          }
+        },
+        {
+          "structure": "proc",
+          "game_time": {
+            "formatted": "00:07:26",
+            "msec": 446040
+          },
+          "placement": {
+            "x": 44,
+            "y": 51
+          }
+        },
+        {
+          "structure": "ftur",
+          "game_time": {
+            "formatted": "00:07:29",
+            "msec": 449520
+          },
+          "placement": {
+            "x": 43,
+            "y": 50
+          }
+        },
+        {
+          "structure": "powr",
+          "game_time": {
+            "formatted": "00:07:42",
+            "msec": 462840
+          },
+          "placement": {
+            "x": 50,
+            "y": 53
+          }
+        },
+        {
+          "structure": "ftur",
+          "game_time": {
+            "formatted": "00:07:47",
+            "msec": 467040
+          },
+          "placement": {
+            "x": 45,
+            "y": 43
+          }
+        },
+        {
+          "structure": "ftur",
+          "game_time": {
+            "formatted": "00:08:02",
+            "msec": 482520
+          },
+          "placement": {
+            "x": 49,
+            "y": 43
+          }
+        },
+        {
+          "structure": "dome",
+          "game_time": {
+            "formatted": "00:08:23",
+            "msec": 503400
+          },
+          "placement": {
+            "x": 68,
+            "y": 71
+          }
+        },
+        {
+          "structure": "apwr",
+          "game_time": {
+            "formatted": "00:09:29",
+            "msec": 569280
+          },
+          "placement": {
+            "x": 46,
+            "y": 55
+          }
+        },
+        {
+          "structure": "apwr",
+          "game_time": {
+            "formatted": "00:09:43",
+            "msec": 583320
+          },
+          "placement": {
+            "x": 50,
+            "y": 57
+          }
+        },
+        {
+          "structure": "tsla",
+          "game_time": {
+            "formatted": "00:09:43",
+            "msec": 583920
+          },
+          "placement": {
+            "x": 49,
+            "y": 60
+          }
+        },
+        {
+          "structure": "stek",
+          "game_time": {
+            "formatted": "00:10:40",
+            "msec": 640920
+          },
+          "placement": {
+            "x": 73,
+            "y": 67
+          }
+        },
+        {
+          "structure": "apwr",
+          "game_time": {
+            "formatted": "00:11:03",
+            "msec": 663240
+          },
+          "placement": {
+            "x": 49,
+            "y": 44
+          }
+        },
+        {
+          "structure": "apwr",
+          "game_time": {
+            "formatted": "00:11:10",
+            "msec": 670440
+          },
+          "placement": {
+            "x": 52,
+            "y": 43
+          }
+        },
+        {
+          "structure": "tsla",
+          "game_time": {
+            "formatted": "00:11:11",
+            "msec": 671640
+          },
+          "placement": {
+            "x": 51,
+            "y": 41
+          }
+        },
+        {
+          "structure": "afld",
+          "game_time": {
+            "formatted": "00:11:24",
+            "msec": 684000
+          },
+          "placement": {
+            "x": 53,
+            "y": 54
+          }
+        },
+        {
+          "structure": "barr",
+          "game_time": {
+            "formatted": "00:11:50",
+            "msec": 710040
+          },
+          "placement": {
+            "x": 44,
+            "y": 47
+          }
+        },
+        {
+          "structure": "barr",
+          "game_time": {
+            "formatted": "00:12:07",
+            "msec": 727200
+          },
+          "placement": {
+            "x": 43,
+            "y": 55
+          }
+        },
+        {
+          "structure": "afld",
+          "game_time": {
+            "formatted": "00:12:24",
+            "msec": 744240
+          },
+          "placement": {
+            "x": 80,
+            "y": 67
+          }
+        },
+        {
+          "structure": "iron",
+          "game_time": {
+            "formatted": "00:12:26",
+            "msec": 746760
+          },
+          "placement": {
+            "x": 74,
+            "y": 66
+          }
+        },
+        {
+          "structure": "apwr",
+          "game_time": {
+            "formatted": "00:12:38",
+            "msec": 758280
+          },
+          "placement": {
+            "x": 51,
+            "y": 47
+          }
+        },
+        {
+          "structure": "tsla",
+          "game_time": {
+            "formatted": "00:13:02",
+            "msec": 782520
+          },
+          "placement": {
+            "x": 50,
+            "y": 45
+          }
+        },
+        {
+          "structure": "tsla",
+          "game_time": {
+            "formatted": "00:14:52",
+            "msec": 892440
+          },
+          "placement": {
+            "x": 35,
+            "y": 67
+          }
+        },
+        {
+          "structure": "apwr",
+          "game_time": {
+            "formatted": "00:14:53",
+            "msec": 893520
+          },
+          "placement": {
+            "x": 39,
+            "y": 64
+          }
+        },
+        {
+          "structure": "tsla",
+          "game_time": {
+            "formatted": "00:16:25",
+            "msec": 985800
+          },
+          "placement": {
+            "x": 35,
+            "y": 69
+          }
+        }
+      ]
+    }
+  ],
+  "chat": [
+    {
+      "channel": "server",
+      "name": null,
+      "message": "Explored Map: True"
+    },
+    {
+      "channel": "server",
+      "name": null,
+      "message": "Crates: False"
+    },
+    {
+      "channel": "server",
+      "name": null,
+      "message": "Delta has joined the game."
+    },
+    {
+      "channel": "server",
+      "name": null,
+      "message": "Welcome to [64H] RAGL Official\n\"hamb for president!\"\nMIND THE RAGL RULES!\n"
+    },
+    {
+      "channel": "server",
+      "name": null,
+      "message": "This map contains custom rules. Game experience may change."
+    },
+    {
+      "channel": "global",
+      "name": "Delta",
+      "message": "should be ok now"
+    },
+    {
+      "channel": "global",
+      "name": "Echo",
+      "message": "sure?"
+    },
+    {
+      "channel": "global",
+      "name": "Delta",
+      "message": "tested in skirmish"
+    },
+    {
+      "channel": "global",
+      "name": "Echo",
+      "message": "cool"
+    },
+    {
+      "channel": "global",
+      "name": "Delta",
+      "message": "glhf"
+    },
+    {
+      "channel": "global",
+      "name": "Echo",
+      "message": "glhf!"
+    },
+    {
+      "channel": "global",
+      "name": "Delta",
+      "message": "gg"
+    },
+    {
+      "channel": "global",
+      "name": "Echo",
+      "message": "gg"
+    },
+    {
+      "channel": "global",
+      "name": "Delta",
+      "message": "wp"
+    },
+    {
+      "channel": "global",
+      "name": "Echo",
+      "message": "thanx"
+    },
+    {
+      "channel": "server",
+      "name": null,
+      "message": "Bravo (Spectator) has disconnected."
+    },
+    {
+      "channel": "server",
+      "name": null,
+      "message": "Echo has disconnected."
+    }
+  ]
+}

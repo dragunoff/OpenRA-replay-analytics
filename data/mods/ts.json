@@ -1,0 +1,19 @@
+{
+  "name": "Tiberian Sun",
+  "features": ["icon", "factions"],
+  "factions": {
+    "random": {
+      "id": "random",
+      "name": "Random"
+    },
+    "gdi": {
+      "id": "gdi",
+      "name": "GDI"
+    },
+    "nod": {
+      "id": "nod",
+      "name": "Nod"
+    }
+  },
+  "actors": {}
+}
