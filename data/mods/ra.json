@@ -12,7 +12,7 @@
     },
     "randomallies": {
       "id": "randomallies",
-      "name": "Random (Allies)"
+      "name": "Random Allies"
     },
     "england": {
       "id": "england",
@@ -32,7 +32,7 @@
     },
     "randomsoviet": {
       "id": "randomsoviet",
-      "name": "Random (Soviet)"
+      "name": "Random Soviet"
     },
     "russia": {
       "id": "russia",
@@ -44,55 +44,10 @@
     }
   },
   "actors": {
-    "spen": {
-      "id": "spen",
-      "type": "building",
-      "name": "Sub Pen"
-    },
-    "syrd": {
-      "id": "syrd",
-      "type": "building",
-      "name": "Ship Yard"
-    },
-    "dome": {
-      "id": "dome",
-      "type": "building",
-      "name": "Radar Dome"
-    },
-    "atek": {
-      "id": "atek",
-      "type": "building",
-      "name": "Allied Tech Center"
-    },
-    "weap": {
-      "id": "weap",
-      "type": "building",
-      "name": "War Factory"
-    },
     "fact": {
       "id": "fact",
       "type": "mcv",
       "name": "Construction Yard"
-    },
-    "proc": {
-      "id": "proc",
-      "type": "building",
-      "name": "Ore Refinery"
-    },
-    "hpad": {
-      "id": "hpad",
-      "type": "building",
-      "name": "Helipad"
-    },
-    "afld": {
-      "id": "afld",
-      "type": "building",
-      "name": "Airfield"
-    },
-    "afld.ukraine": {
-      "id": "afld.ukraine",
-      "type": "building",
-      "name": "Airfield (Ukraine)"
     },
     "powr": {
       "id": "powr",
@@ -104,10 +59,10 @@
       "type": "building",
       "name": "Advanced Power Plant"
     },
-    "stek": {
-      "id": "stek",
+    "proc": {
+      "id": "proc",
       "type": "building",
-      "name": "Soviet Tech Center"
+      "name": "Ore Refinery"
     },
     "barr": {
       "id": "barr",
@@ -124,10 +79,55 @@
       "type": "building",
       "name": "Allied Barracks"
     },
+    "spen": {
+      "id": "spen",
+      "type": "building",
+      "name": "Sub Pen"
+    },
+    "syrd": {
+      "id": "syrd",
+      "type": "building",
+      "name": "Ship Yard"
+    },
     "fix": {
       "id": "fix",
       "type": "building",
       "name": "Service Depot"
+    },
+    "weap": {
+      "id": "weap",
+      "type": "building",
+      "name": "War Factory"
+    },
+    "dome": {
+      "id": "dome",
+      "type": "building",
+      "name": "Radar Dome"
+    },
+    "hpad": {
+      "id": "hpad",
+      "type": "building",
+      "name": "Helipad"
+    },
+    "afld": {
+      "id": "afld",
+      "type": "building",
+      "name": "Airfield"
+    },
+    "afld.ukraine": {
+      "id": "afld.ukraine",
+      "type": "building",
+      "name": "Airfield (Ukraine)"
+    },
+    "atek": {
+      "id": "atek",
+      "type": "building",
+      "name": "Allied Tech Center"
+    },
+    "stek": {
+      "id": "stek",
+      "type": "building",
+      "name": "Soviet Tech Center"
     },
     "silo": {
       "id": "silo",
@@ -164,21 +164,6 @@
       "type": "defence",
       "name": "Wooden Fence"
     },
-    "ftur": {
-      "id": "ftur",
-      "type": "defence",
-      "name": "Flame Tower"
-    },
-    "tsla": {
-      "id": "tsla",
-      "type": "defence",
-      "name": "Tesla Coil"
-    },
-    "sam": {
-      "id": "sam",
-      "type": "defence",
-      "name": "SAM Site"
-    },
     "pbox": {
       "id": "pbox",
       "type": "defence",
@@ -203,6 +188,21 @@
       "id": "gap",
       "type": "defence",
       "name": "Gap Generator"
+    },
+    "ftur": {
+      "id": "ftur",
+      "type": "defence",
+      "name": "Flame Tower"
+    },
+    "tsla": {
+      "id": "tsla",
+      "type": "defence",
+      "name": "Tesla Coil"
+    },
+    "sam": {
+      "id": "sam",
+      "type": "defence",
+      "name": "SAM Site"
     },
     "iron": {
       "id": "iron",
