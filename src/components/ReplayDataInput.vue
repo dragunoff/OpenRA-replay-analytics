@@ -5,12 +5,12 @@
     </b-alert>
     <fieldset ref="fieldsetInputReplayData">
       <b-form-group label="Replay JSON" label-for="input-replay-data">
-        <b-form-textarea name="replay-data" :rows="10" :max-rows="10" v-model="inputReplayData" required :state="isValid"></b-form-textarea>
+        <b-form-textarea name="replay-data" :rows="10" :max-rows="10" v-model="inputReplayData" required :state="isValid" tabindex="1"></b-form-textarea>
         <small class="form-text text-muted">
           Paste the output of <strong>openra-ruby</strong> or <a href="data/sample/ra-1v1-sample.json" @click="loadSampleReplay($event)">load a sample 1v1 game</a>.
         </small>
       </b-form-group>
-      <b-btn type="submit" variant="primary">Submit</b-btn>
+      <b-btn type="submit" variant="primary" tabindex="2">Submit</b-btn>
     </fieldset>
   </b-form>
 </template>
