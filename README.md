@@ -1,6 +1,14 @@
-# openra-replay-analytics
+# OpenRA Replay Analytics
 
-> OpenRA Replay Analytics
+## Greetings, Commander!
+
+This is a visualization tool for data extracted from [OpenRA](https://openra.net) replay files.
+
+To extract data from replays, use [openra-ruby](https://github.com/AMHOL/openra-ruby) with the `--format` option set to `json` or `pretty-json`. Here is an example command:
+
+``` bash
+openra replay-data /path/to/replay.orarep --format pretty-json
+```
 
 ## Build Setup
 
