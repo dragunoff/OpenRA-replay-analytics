@@ -6,6 +6,8 @@
 </template>
 
 <script>
+import _ from 'lodash';
+
 export default {
   data() {
     return {
@@ -25,7 +27,10 @@ export default {
       type: Number,
       default: 64,
     },
-    badge: '',
+    badge: {
+      type: Number,
+      default: 0,
+    },
   },
   mounted() {
     if (this.$store.state.settings.buildOrderViewMode === 'timeline') {
@@ -104,7 +109,7 @@ export default {
       let offset = diff + rectPrevious.height - rectPrevious.height * 0.2;
       el.style.top = offset + 'px';
     },
-    cameoError(e) {
+    cameoError() {
       this.hasCameoError = true;
     },
   },

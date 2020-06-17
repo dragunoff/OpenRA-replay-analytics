@@ -7,8 +7,8 @@
 
         <div class="c-orders__order" :style="{ width: timelineSize + 'px' }">
 
-          <div class="c-order c-order--timeline">
-            <Actor v-for="(build, index) of player.build" :key="index" :build="build" v-if="isBuildOrderTabActive" />
+          <div class="c-order c-order--timeline" v-if="isBuildOrderTabActive">
+            <Actor v-for="(build, index) of player.build" :key="index" :build="build" />
           </div>
 
         </div>

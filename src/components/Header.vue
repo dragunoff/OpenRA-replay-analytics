@@ -6,6 +6,7 @@
 </template>
 
 <script>
+import _ from 'lodash';
 import ModName from './ModName.vue';
 
 export default {

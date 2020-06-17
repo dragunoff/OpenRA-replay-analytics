@@ -5,31 +5,47 @@
   "author": "Ivaylo Draganov <dragunoff@gmail.com>",
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "bootstrap": "^4.0.0-beta.2",
-    "bootstrap-vue": "^1.2.0",
-    "popper.js": "^1.12.9",
-    "vue": "^2.5.3",
-    "vue-moment": "^4.0.0",
-    "vuex": "^3.0.1"
+    "bootstrap-vue": "^2.15.0",
+    "core-js": "^3.6.5",
+    "lodash": "^4.17.15",
+    "moment": "^2.26.0",
+    "vue": "^2.6.11",
+    "vue-moment": "^4.1.0",
+    "vuex": "^3.4.0"
   },
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^6.0.0",
-    "babel-preset-env": "^1.6.1",
-    "cross-env": "^5.1.1",
-    "css-loader": "^0.28.7",
-    "extract-text-webpack-plugin": "^3.0.2",
-    "file-loader": "^1.1.5",
-    "node-sass": "^4.6.1",
-    "sass-loader": "^6.0.6",
-    "style-loader": "^0.19.0",
-    "vue-loader": "^13.5.0",
-    "vue-template-compiler": "^2.5.3",
-    "webpack": "^3.8.1",
-    "webpack-dev-server": "^2.9.4"
-  }
+    "@vue/cli-plugin-babel": "~4.4.0",
+    "@vue/cli-plugin-eslint": "~4.4.0",
+    "@vue/cli-service": "~4.4.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^8.0.2",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
 }

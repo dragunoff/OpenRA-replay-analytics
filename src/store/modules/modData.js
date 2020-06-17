@@ -1,10 +1,13 @@
+import _ from 'lodash';
+
 const state = {};
 
 const getters = {
   modName: (state, getters, rootState) => {
     const id = rootState.replayData.mod;
+    let name = '';
 
-    if (state.hasOwnProperty('name')) {
+    if (Object.prototype.hasOwnProperty.call(state, 'name')) {
       name = state.name;
     } else {
       name = id;
@@ -12,44 +15,40 @@ const getters = {
 
     return name;
   },
-  isModSupported: (state, getters, rootState) => id => {
+  isModSupported: (state, getters, rootState) => () => {
     const mod = rootState.replayData.mod;
     const supportedMods = rootState.settings.supportedMods;
 
     return supportedMods.includes(mod);
   },
-  modFeatures: (state, getters, rootState) => {
-    const id = rootState.replayData.mod;
+  modFeatures: (state) => {
     let features = [];
 
-    if (state.hasOwnProperty('features')) {
+    if (Object.prototype.hasOwnProperty.call(state, 'features')) {
       features = state.features;
     }
 
     return features;
   },
-  factionInfo: (state, getters, rootState) => id => {
-    const mod = rootState.replayData.mod;
+  factionInfo: (state) => id => {
     id = id.toLowerCase();
 
-    if (!state.hasOwnProperty('factions')) {
+    if (!Object.prototype.hasOwnProperty.call(state, 'factions')) {
       return false;
     }
 
-    if (!state.factions.hasOwnProperty(id)) {
+    if (!Object.prototype.hasOwnProperty.call(state.factions, id)) {
       return { 'id': id, 'name': id };
     }
 
     return state.factions[id];
   },
-  actorInfo: (state, getters, rootState) => id => {
-    const mod = rootState.replayData.mod;
-
-    if (!state.hasOwnProperty('actors')) {
+  actorInfo: (state) => id => {
+    if (!Object.prototype.hasOwnProperty.call(state, 'actors')) {
       return false;
     }
 
-    if (!state.actors.hasOwnProperty(id)) {
+    if (!Object.prototype.hasOwnProperty.call(state.actors, id)) {
       return { 'id': id, 'name': id, "type": "unknown" };
     }
 

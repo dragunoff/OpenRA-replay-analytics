@@ -12,7 +12,7 @@ const state = {
 };
 
 const getters = {
-  timelineSize(state, getters, rootState, rootGetters) {
+  timelineSize(state, getters, rootState) {
     return rootState.replayData.game.duration.msec * state.timelineScalingFactor;
   },
 };

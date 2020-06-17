@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 const state = {};
 
 const getters = {
@@ -31,7 +33,7 @@ const getters = {
     _.forEach(clients, function(client) {
       let team = getCurrentClientTeam(client);
 
-      if (teams.hasOwnProperty(team)) {
+      if (Object.prototype.hasOwnProperty.call(teams, team)) {
         return;
       }
       teams = Object.defineProperty(teams, team, {

@@ -32,7 +32,6 @@
 
 <script>
 import FilterBuildOrders from './FilterBuildOrders.vue';
-import TeamName from './TeamName.vue';
 import BuildOrdersSimple from './BuildOrdersSimple.vue';
 import BuildOrdersTimeline from './BuildOrdersTimeline.vue';
 import BuildOrdersStats from './BuildOrdersStats.vue';
@@ -49,7 +48,6 @@ export default {
   },
   components: {
     FilterBuildOrders,
-    TeamName,
     ClientInfo,
     BuildOrdersSimple,
     BuildOrdersTimeline,

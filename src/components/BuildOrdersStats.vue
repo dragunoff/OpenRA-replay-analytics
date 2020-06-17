@@ -7,9 +7,13 @@
 
         <div class="c-orders__order c-order c-order--simple">
 
-          <Actor v-for="(actor) of buildings" :key="actor.id" :actor="actor" :badge="count(actor.id, player.build)" v-if="count(actor.id, player.build)" />
+          <div v-for="(actor) of buildings" :key="actor.id">
+            <Actor :actor="actor" :badge="count(actor.id, player.build)" v-if="count(actor.id, player.build)" />
+          </div>
 
-          <Actor v-for="(actor) of defences" :key="actor.id" :actor="actor" :badge="count(actor.id, player.build)" v-if="count(actor.id, player.build)" />
+          <div v-for="(actor) of defences" :key="actor.id">
+            <Actor :actor="actor" :badge="count(actor.id, player.build)" v-if="count(actor.id, player.build)" />
+          </div>
 
         </div>
 
@@ -21,6 +25,7 @@
 </template>
 
 <script>
+import _ from 'lodash';
 import Actor from './Actor.vue';
 
 export default {
