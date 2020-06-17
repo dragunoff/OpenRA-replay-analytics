@@ -30,18 +30,17 @@ const getters = {
   },
   factionInfo: (state, getters, rootState) => id => {
     const mod = rootState.replayData.mod;
+    id = id.toLowerCase();
 
     if (!state.hasOwnProperty('factions')) {
       return false;
     }
 
-    const factions = state.factions;
-
     if (!state.factions.hasOwnProperty(id)) {
       return { 'id': id, 'name': id };
     }
 
-    return factions[id];
+    return state.factions[id];
   },
   actorInfo: (state, getters, rootState) => id => {
     const mod = rootState.replayData.mod;
@@ -50,13 +49,11 @@ const getters = {
       return false;
     }
 
-    const actors = state.actors;
-
     if (!state.actors.hasOwnProperty(id)) {
       return { 'id': id, 'name': id, "type": "unknown" };
     }
 
-    return actors[id];
+    return state.actors[id];
   },
   buildings: (state) => {
     return _.filter(state.actors, ['type', 'building']);
