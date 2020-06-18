@@ -1,8 +1,8 @@
 <template>
-  <div v-show="isFilteredIn" class="c-message" :class="{ 'is-server': isServer, 'is-spectator': isSpectator }">
-    <small class="c-message__channel">#{{ channel }} </small>
-    <span class="c-message__name"><strong>{{ name }}</strong>: </span>
-    <span class="c-message__message">{{ message.message }}</span>
+  <div v-show="isFilteredIn" class="c-chat-message" :class="{ 'is-server': isServer, 'is-spectator': isSpectator }">
+    <small class="c-chat-message__channel">#{{ channel }} </small>
+    <span class="c-chat-message__name"><strong>{{ name }}</strong>: </span>
+    <span class="c-chat-message__message">{{ message.message }}</span>
   </div>
 </template>
 
@@ -33,7 +33,7 @@ export default {
 </script>
 
 <style lang="scss">
-.c-message {
+.c-chat-message {
   margin: 0 0 0.35em;
 
   &__channel {

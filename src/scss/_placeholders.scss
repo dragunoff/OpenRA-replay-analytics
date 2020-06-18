@@ -1,0 +1,30 @@
+@import '_vars.scss';
+
+%build_orders_box {
+  display: flex;
+  flex: 1 0 auto;
+  min-height: 220px;
+
+  padding: 1.25rem;
+  border-bottom: 1px solid $border-color;
+  border-top: 1px solid $border-color;
+  margin-top: -1px;
+}
+
+%build_orders_wrap {
+  overflow-x: auto;
+  border-top: 1px solid $border-color;
+  border-left: 1px solid $border-color;
+  border-right: 1px solid $border-color;
+}
+
+%build_orders_wrap {
+  overflow-x: auto;
+  border-top: 1px solid $border-color;
+  border-left: 1px solid $border-color;
+  border-right: 1px solid $border-color;
+}
+
+%build_orders_player {
+  display: flex;
+}

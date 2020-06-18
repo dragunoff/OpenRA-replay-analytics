@@ -1,5 +1,5 @@
 <template>
-  <div class="c-game-info row">
+  <div class="c-tab-game-info row">
     <dl class="col-sm">
       <dt>Mod</dt>
       <dd>
@@ -24,7 +24,7 @@
 
     <dl class="col-sm">
       <dt>Options</dt>
-      <dd v-for="(value, name) of replayData.game.options" :key="name" class="c-game-info__option">
+      <dd v-for="(value, name) of replayData.game.options" :key="name" class="c-tab-game-info__option">
         {{ name | prettifyOptionName }}: {{ value | prettifyOptionValue }}
       </dd>
     </dl>
@@ -65,7 +65,7 @@ export default {
 </script>
 
 <style lang="scss">
-.c-game-info {
+.c-tab-game-info {
 
   &__option {
     text-transform: capitalize;

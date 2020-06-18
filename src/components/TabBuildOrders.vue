@@ -3,15 +3,15 @@
 
     <FilterBuildOrders />
 
-    <div class="c-orders">
+    <div class="c-tab-build-orders">
 
-        <div class="c-orders__teams">
+        <div class="c-tab-build-orders__teams">
 
-            <div v-for="(team, index) of teams" :key="index" class="c-orders__team">
+            <div v-for="(team, index) of teams" :key="index" class="c-tab-build-orders__team">
 
-                <div v-for="(player, index) of team" :key="index" class="c-orders__player">
+                <div v-for="(player, index) of team" :key="index" class="c-tab-build-orders__player">
 
-                    <div class="c-orders__client">
+                    <div class="c-tab-build-orders__client">
                         <ClientInfo :client="player" :showTeam="true" v-if="player.is_player" />
                     </div>
 
@@ -57,8 +57,9 @@ export default {
 </script>
 
 <style lang="scss">
-.c-orders {
-  $border-color: #ccc;
+.c-tab-build-orders {
+  @import '../scss/_placeholders.scss';
+  @import '../scss/_vars.scss';
 
   display: flex;
   position: relative;
@@ -71,19 +72,11 @@ export default {
   }
 
   &__player {
-    display: flex;
+    @extend %build_orders_player;
   }
 
-  &__client,
-  &__order {
-    display: flex;
-    flex: 1 0 auto;
-    min-height: 220px;
-
-    padding: 1.25rem 0;
-    border-bottom: 1px solid $border-color;
-    border-top: 1px solid $border-color;
-    margin-top: -1px;
+  &__client {
+    @extend %build_orders_box;
   }
 }
 </style>

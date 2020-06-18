@@ -1,11 +1,11 @@
 <template>
-  <div class="c-orders__simple">
+  <div class="c-build-orders-stats">
 
-    <div v-for="(team, index) of teams" :key="index" class="c-orders__team">
+    <div v-for="(team, index) of teams" :key="index" class="c-build-orders-stats__team">
 
-      <div v-for="(player, index) of team" :key="index" class="c-orders__player">
+      <div v-for="(player, index) of team" :key="index" class="c-build-orders-stats__player">
 
-        <div class="c-orders__order c-order c-order--simple">
+        <div class="c-build-orders-stats__order">
 
           <div v-for="(actor) of buildings" :key="actor.id">
             <Actor :actor="actor" :badge="count(actor.id, player.build)" v-if="count(actor.id, player.build)" />
@@ -50,3 +50,19 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+@import '../scss/_placeholders.scss';
+
+.c-build-orders-stats {
+  @extend %build_orders_wrap;
+
+  &__player {
+    @extend %build_orders_player;
+  }
+
+  &__order {
+    @extend %build_orders_box;
+  }
+}
+</style>

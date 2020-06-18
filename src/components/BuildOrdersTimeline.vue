@@ -1,13 +1,13 @@
 <template>
-  <div class="c-orders__timeline" ref="timeline" @mousemove="onTimelineEvent($event)" @scroll="onTimelineEvent($event)">
+  <div class="c-build-orders-timeline" ref="timeline" @mousemove="onTimelineEvent($event)" @scroll="onTimelineEvent($event)">
 
-    <div v-for="(team, index) of teams" :key="index" class="c-orders__team">
+    <div v-for="(team, index) of teams" :key="index" class="c-build-orders-timeline__team">
 
-      <div v-for="(player, index) of team" :key="index" class="c-orders__player">
+      <div v-for="(player, index) of team" :key="index" class="c-build-orders-timeline__player">
 
-        <div class="c-orders__order" :style="{ width: timelineSize + 'px' }">
+        <div class="c-build-orders-timeline__order" :style="{ width: timelineSize + 'px' }">
 
-          <div class="c-order c-order--timeline" v-if="isBuildOrderTabActive">
+          <div class="c-build-orders-timeline__actor" v-if="isBuildOrderTabActive">
             <Actor v-for="(build, index) of player.build" :key="index" :build="build" />
           </div>
 
@@ -17,11 +17,11 @@
 
     </div>
 
-    <div class="c-orders__veil-wrap" ref="veil">
-      <div class="c-orders__veil"></div>
+    <div class="c-build-orders-timeline__veil-wrap" ref="veil">
+      <div class="c-build-orders-timeline__veil"></div>
     </div>
 
-    <div class="c-orders__playhead" ref="playhead" current-time="00:00:00"></div>
+    <div class="c-build-orders-timeline__playhead" ref="playhead" current-time="00:00:00"></div>
 
   </div>
 </template>
@@ -107,21 +107,30 @@ export default {
 </script>
 
 <style lang="scss">
-$border-color: #ccc;
+@import '../scss/_placeholders.scss';
+@import '../scss/_vars.scss';
 
-.c-order {
+.c-build-orders-timeline {
+  @extend %build_orders_wrap;
+
   position: relative;
-}
+  overflow-y: hidden;
 
-.c-orders {
-  &__timeline {
+  border-right: 1px solid rgba($border-color, 0.2);
+
+  &__player {
+    display: flex;
+  }
+
+  &__order {
+    @extend %build_orders_box;
+
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &__actor {
     position: relative;
-    overflow-x: auto;
-    overflow-y: hidden;
-
-    border-top: 1px solid $border-color;
-    border-left: 1px solid $border-color;
-    border-right: 1px solid rgba($border-color, 0.2);
   }
 
   &__veil-wrap {

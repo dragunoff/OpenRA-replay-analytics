@@ -1,9 +1,9 @@
 <template>
-  <div class="c-clients">
-    <div v-for="(team, index) of teams" :key="index" class="c-clients__team">
-      <span class="o-label c-clients__team-name"><TeamName :teamId="index" /></span>
+  <div class="c-tab-clients">
+    <div v-for="(team, index) of teams" :key="index" class="c-tab-clients__team">
+      <span class="o-label c-tab-clients__team-name"><TeamName :teamId="index" /></span>
       <div class="row">
-        <div v-for="(client, index) of team" :key="index" class="c-clients__client col-sm-2 mb-3">
+        <div v-for="(client, index) of team" :key="index" class="c-tab-clients__client col-sm-2 mb-3">
             <ClientInfo :client="client" />
         </div>
       </div>
@@ -29,7 +29,7 @@ export default {
 </script>
 
 <style lang="scss">
-.c-clients {
+.c-tab-clients {
   &__team {
     border-top: 1px solid #ccc;
     position: relative;
