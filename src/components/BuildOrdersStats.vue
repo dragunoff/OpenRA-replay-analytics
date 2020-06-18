@@ -8,11 +8,15 @@
         <div class="c-build-orders-stats__order">
 
           <div v-for="(actor) of buildings" :key="actor.id">
-            <Actor :actor="actor" :badge="count(actor.id, player.build)" v-if="count(actor.id, player.build)" />
+            <Actor :id="actor.id" :badge="count_structures(actor.id, player.build)" v-if="count_structures(actor.id, player.build)" />
           </div>
 
           <div v-for="(actor) of defences" :key="actor.id">
-            <Actor :actor="actor" :badge="count(actor.id, player.build)" v-if="count(actor.id, player.build)" />
+            <Actor :id="actor.id" :badge="count_structures(actor.id, player.build)" v-if="count_structures(actor.id, player.build)" />
+          </div>
+
+          <div v-for="(actor) of support_powers" :key="actor.id">
+            <Actor :id="actor.id" :badge="count_support_powers(actor.id, player.support_powers)" v-if="count_support_powers(actor.id, player.support_powers)" type="support_power" />
           </div>
 
         </div>
@@ -39,10 +43,16 @@ export default {
     defences() {
       return this.$store.getters['modData/defences'];
     },
+    support_powers() {
+      return this.$store.getters['modData/support_powers'];
+    },
   },
   methods: {
-    count(actor, build) {
-      return _.filter(build, ['structure', actor]).length;
+    count_structures(actor_id, build) {
+      return _.filter(build, ['structure', actor_id]).length;
+    },
+    count_support_powers(actor_id, support_powers) {
+      return _.filter(support_powers, ['type', actor_id]).length;
     }
   },
   components: {

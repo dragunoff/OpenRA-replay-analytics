@@ -49,16 +49,30 @@ const getters = {
     }
 
     if (!Object.prototype.hasOwnProperty.call(state.actors, id)) {
-      return { 'id': id, 'name': id, "type": "unknown" };
+      return { 'id': id, 'name': id, 'type': 'unknown' };
     }
 
     return state.actors[id];
+  },
+  supportPowerInfo: (state) => id => {
+    if (!Object.prototype.hasOwnProperty.call(state, 'support_powers')) {
+      return false;
+    }
+
+    if (!Object.prototype.hasOwnProperty.call(state.support_powers, id)) {
+      return { 'id': id, 'name': id, 'type': 'unknown' };
+    }
+
+    return state.support_powers[id];
   },
   buildings: (state) => {
     return _.filter(state.actors, ['type', 'building']);
   },
   defences: (state) => {
     return _.filter(state.actors, ['type', 'defence']);
+  },
+  support_powers: (state) => {
+    return _.filter(state.support_powers, ['type', 'support_power']);
   },
 };
 

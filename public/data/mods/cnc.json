@@ -1,6 +1,6 @@
 {
   "name": "Tiberian Dawn",
-  "features": ["icon", "factions", "buildings", "defences"],
+  "features": ["icon", "factions", "buildings", "defences", "support_powers"],
   "factions": {
     "random": {
       "id": "rangom",
@@ -150,6 +150,23 @@
       "id": "obli",
       "type": "defence",
       "name": "Obelisk of Light"
+    }
+  },
+  "support_powers" : {
+    "airstrike": {
+      "id": "airstrike",
+      "type": "support_power",
+      "name": "Air Strike"
+    },
+    "ion_cannon": {
+      "id": "ioncannon",
+      "type": "support_power",
+      "name": "Ion Cannon"
+    },
+    "nuke": {
+      "id": "abomb",
+      "type": "support_power",
+      "name": "Nuclear Strike"
     }
   }
 }

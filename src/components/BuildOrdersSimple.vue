@@ -6,7 +6,8 @@
       <div v-for="(player, index) of team" :key="index" class="c-build-orders-simple__player">
 
         <div class="c-build-orders-simple__order">
-          <Actor v-for="(build, index) of player.build" :key="index" :build="build" />
+          <Actor v-for="(build, index) of player.build" :key="'build-' + index" :id="build.structure" :game_time="build.game_time" />
+          <Actor v-for="(support_power, index) of player.support_powers" :key="'support_power-' + index" :id="support_power.type" :game_time="support_power.game_time" type="support_power" />
         </div>
 
       </div>

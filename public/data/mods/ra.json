@@ -1,6 +1,6 @@
 {
   "name": "Red Alert",
-  "features": ["icon", "factions", "buildings", "defences"],
+  "features": ["icon", "factions", "buildings", "defences", "support_powers"],
   "factions": {
     "random": {
       "id": "random",
@@ -273,6 +273,43 @@
       "id": "facf",
       "type": "defence",
       "name": "Fake Construction Yard"
+    }
+  },
+  "support_powers" : {
+    "iron_curtain": {
+      "id": "iron_curtain",
+      "type": "support_power",
+      "name": "Iron Curtain"
+    },
+    "chronoshift": {
+      "id": "chronoshift",
+      "type": "support_power",
+      "name": "Chronoshift"
+    },
+    "parabombs": {
+      "id": "parabombs",
+      "type": "support_power",
+      "name": "Parabombs"
+    },
+    "paratroopers": {
+      "id": "paratroopers",
+      "type": "support_power",
+      "name": "Paratroopers"
+    },
+    "spy_plane": {
+      "id": "spy_plane",
+      "type": "support_power",
+      "name": "Spy Plane"
+    },
+    "nuke": {
+      "id": "nuke",
+      "type": "support_power",
+      "name": "Atom Bomb"
+    },
+    "sonarpulse": {
+      "id": "sonarpulse",
+      "type": "support_power",
+      "name": "Sonar Pulse"
     }
   }
 }

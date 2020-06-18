@@ -11,6 +11,7 @@
       <b-btn variant="outline-primary" :pressed="buildOrderFilter === 'all'" @click="setFilters($event)" value="all">Everything</b-btn>
       <b-btn v-if="modFeatures.includes('buildings')" variant="outline-primary" :pressed="buildOrderFilter === 'building'" @click="setFilters($event)" value="building">Buildings</b-btn>
       <b-btn v-if="modFeatures.includes('defences')" variant="outline-primary" :pressed="buildOrderFilter === 'defence'" @click="setFilters($event)" value="defence">Defences</b-btn>
+      <b-btn v-if="modFeatures.includes('support_powers')" variant="outline-primary" :pressed="buildOrderFilter === 'support_power'" @click="setFilters($event)" value="support_power">Support Powers</b-btn>
     </b-btn-group>
   </div>
 </template>

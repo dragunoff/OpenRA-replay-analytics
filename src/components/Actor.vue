@@ -15,11 +15,15 @@ export default {
     };
   },
   props: {
-    actor: {
-      type: Object,
-      default: () => {},
+    id: {
+      type: String,
+      default: '',
     },
-    build: {
+    type: {
+      type: String,
+      default: 'actor',
+    },
+    game_time: {
       type: Object,
       default: () => {},
     },
@@ -42,24 +46,18 @@ export default {
       return 0.75 * this.width;
     },
     offset() {
-      if (!this.build || _.isEmpty(this.build)) {
+      if (!this.game_time || _.isEmpty(this.game_time)) {
         return '0px';
       }
 
-      return this.build.game_time.msec * this.$store.state.settings.timelineScalingFactor + 'px';
+      return this.game_time.msec * this.$store.state.settings.timelineScalingFactor + 'px';
     },
     info() {
-
-      if (this.actor && !_.isEmpty(this.actor)) {
-        return this.actor;
+      if (this.type === 'support_power') {
+        return this.$store.getters['modData/supportPowerInfo'](this.id);
       }
 
-      let id;
-      if (this.build && !_.isEmpty(this.build)) {
-        id = this.build.structure.toLowerCase();
-      }
-
-      return this.$store.getters['modData/actorInfo'](id);
+      return this.$store.getters['modData/actorInfo'](this.id);
     },
     name() {
       return this.info.name;
@@ -67,8 +65,8 @@ export default {
     popoverTitle() {
       let title = '';
 
-      if (this.build && !_.isEmpty(this.build)) {
-        title = this.build.game_time.formatted;
+      if (this.game_time && !_.isEmpty(this.game_time)) {
+        title = this.game_time.formatted;
       }
 
       return title;

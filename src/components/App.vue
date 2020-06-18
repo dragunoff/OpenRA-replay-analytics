@@ -25,7 +25,7 @@
           <TabClients />
         </b-tab>
 
-        <b-tab title="Build Orders">
+        <b-tab title="Build Orders &amp; Powers">
           <TabBuildOrders />
         </b-tab>
 

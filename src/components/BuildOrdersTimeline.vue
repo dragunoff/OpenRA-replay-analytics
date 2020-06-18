@@ -8,7 +8,11 @@
         <div class="c-build-orders-timeline__order" :style="{ width: timelineSize + 'px' }">
 
           <div class="c-build-orders-timeline__actor" v-if="isBuildOrderTabActive">
-            <Actor v-for="(build, index) of player.build" :key="index" :build="build" />
+            <Actor v-for="(build, index) of player.build" :key="index" :id="build.structure" :game_time="build.game_time" />
+          </div>
+
+          <div class="c-build-orders-timeline__actor" v-if="isBuildOrderTabActive">
+            <Actor v-for="(support_power, index) of player.support_powers" :key="index" :id="support_power.type" :game_time="support_power.game_time" type="support_power" />
           </div>
 
         </div>
@@ -115,8 +119,6 @@ export default {
 
   position: relative;
   overflow-y: hidden;
-
-  border-right: 1px solid rgba($border-color, 0.2);
 
   &__player {
     display: flex;
