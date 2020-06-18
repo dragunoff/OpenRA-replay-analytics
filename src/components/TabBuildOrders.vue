@@ -57,10 +57,10 @@ export default {
 </script>
 
 <style lang="scss">
-.c-tab-build-orders {
-  @import '../scss/_placeholders.scss';
-  @import '../scss/_vars.scss';
+@import '../scss/_placeholders.scss';
+@import '../scss/_vars.scss';
 
+.c-tab-build-orders {
   display: flex;
   position: relative;
   // margin: 0 -1.25rem;
@@ -77,6 +77,7 @@ export default {
 
   &__client {
     @extend %build_orders_box;
+    border-top: 0;
   }
 }
 </style>
