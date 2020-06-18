@@ -78,7 +78,12 @@ export default {
       let href = window.location.href.replace(/\/$/, '');
       let mod = this.$store.state.replayData.mod;
 
-      return href + '/assets/mods/' + mod + '/cameos/' + this.info.id + '.gif';
+      let filename = this.info.id + '.gif';
+      if (this.type === 'support_power') {
+        filename = 'support_power-' + filename;
+      }
+
+      return href + '/assets/mods/' + mod + '/cameos/' + filename;
     },
     isFilteredIn() {
       let filters = this.$store.state.settings.buildOrderFilter;

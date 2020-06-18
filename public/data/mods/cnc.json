@@ -159,12 +159,12 @@
       "name": "Air Strike"
     },
     "ion_cannon": {
-      "id": "ioncannon",
+      "id": "ion_cannon",
       "type": "support_power",
       "name": "Ion Cannon"
     },
     "nuke": {
-      "id": "abomb",
+      "id": "nuke",
       "type": "support_power",
       "name": "Nuclear Strike"
     }
