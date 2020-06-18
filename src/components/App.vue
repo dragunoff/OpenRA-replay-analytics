@@ -77,20 +77,5 @@ export default {
 </script>
 
 <style lang="scss">
-body {
-  overflow-x: hidden;
-}
-
-.is-help {
-  cursor: help;
-}
-
-.o-label {
-  text-transform: uppercase;
-  font-size: 11px;
-  opacity: 0.8;
-  background-color: #999;
-  color: white;
-  padding: 0.15em 0.45em;
-}
+@import '../scss/_global.scss';
 </style>
