@@ -1,20 +1,31 @@
 <template>
-  <b-form @submit="onSubmit($event)">
-    <fieldset ref="fieldset">
-      <b-form-group label="Replay JSON" label-for="input-replay-data">
-        <b-form-textarea name="replay-data" :rows="8" :max-rows="8" v-model="input" required :state="isValid"></b-form-textarea>
-        <small class="form-text text-muted">
-          Paste the JSON output of <strong>openra-ruby</strong> or <a href="data/sample/ra-1v1-sample.json" @click="loadSampleReplay($event)">load a sample 1v1 game</a>.
-        </small>
-      </b-form-group>
-      <b-btn type="submit" variant="primary">Submit</b-btn>
-    </fieldset>
-  </b-form>
+  <div>
+    <b-form @submit="onSubmit($event)">
+      <b-alert variant="danger" dismissible :show="hasError">
+        {{ errorMessage }}
+      </b-alert>
+      <fieldset ref="fieldset">
+        <b-form-group label="Replay file" label-for="input-replay-data">
+          <b-form-file
+            v-model="file"
+            accept=".orarep"
+            :required="true"
+          ></b-form-file>
+          <small class="form-text text-muted">
+            Choose or drag and drop an <strong>.orarep</strong> file.
+          </small>
+        </b-form-group>
+        <b-btn type="submit" variant="primary">Submit</b-btn>
+      </fieldset>
+    </b-form>
+  </div>
 </template>
 
 <script>
 import replayDataStore from '../store/modules/replayData';
 import modDataStore from '../store/modules/modData';
+
+const API_URL = 'http://li2152-223.members.linode.com/replays/data';
 
 export default {
   data() {
@@ -22,7 +33,7 @@ export default {
       isValid: null,
       hasError: false,
       errorMessage: '',
-      input: '',
+      file: null,
     };
   },
   computed: {
@@ -31,40 +42,27 @@ export default {
     },
   },
   methods: {
-    loadSampleReplay(e) {
-      e.preventDefault();
-
-      const url = e.target.getAttribute('href');
-
-      fetch(url)
-        .then(response => {
-          if (response.ok) {
-            return response.text();
-          }
-          throw new Error('Error fetching sample replay data.');
-        })
-        .then(replayDataJSON => {
-          this.input = replayDataJSON;
-        })
-        .catch(e => {
-          this.setError(e);
-          this.enableInput();
-        });
-    },
     onSubmit(e) {
       e.preventDefault();
 
-      if (this.input) {
+      if (this.file) {
         this.disableInput();
 
-        try {
-          let replayJSON = JSON.parse(this.input);
+        const formData = new FormData(e.target);
+        formData.append('data', this.file);
+
+        fetch(API_URL, {
+          method: 'POST',
+          body: formData
+        }).then(
+          response => response.json()
+        ).then(replayJSON => {
           this.registerReplayDataStore(replayJSON);
           this.registerModDataStore(replayJSON);
-        } catch (e) {
+        }).catch(e => {
           this.setError(e);
           this.enableInput();
-        }
+        });
       }
     },
     setError(e) {

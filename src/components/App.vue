@@ -8,13 +8,14 @@
       <HeaderDefault v-if="!isReplayDataReady"/>
       <Header v-if="isReplayDataReady"/>
 
-      <b-card v-if="!isReplayDataReady">
-        <b-row>
-          <b-col>
-            <ReplayDataInput />
-          </b-col>
-        </b-row>
-      </b-card>
+      <b-tabs card v-if="!isReplayDataReady">
+        <b-tab title="Upload Replay" active>
+          <ReplayFileInput />
+        </b-tab>
+        <b-tab title="Paste JSON">
+          <ReplayDataInput />
+        </b-tab>
+      </b-tabs>
 
       <b-tabs card @input="onTabActivated" v-if="isReplayDataReady">
         <b-tab title="Game Info" active>
@@ -42,6 +43,7 @@
 <script>
 import Navbar from './Navbar.vue';
 import ReplayDataInput from './ReplayDataInput.vue';
+import ReplayFileInput from './ReplayFileInput.vue';
 import HeaderDefault from './HeaderDefault.vue';
 import Header from './Header.vue';
 import Footer from './Footer.vue';
@@ -60,6 +62,7 @@ export default {
   components: {
     Navbar,
     ReplayDataInput,
+    ReplayFileInput,
     HeaderDefault,
     Header,
     Footer,
