@@ -7,7 +7,10 @@
       </dd>
 
       <dt>Map</dt>
-      <dd>{{ replayData.map.name }}</dd>
+      <dd>
+        {{ replayData.map.name }}
+        <MapInfo :hash="replayData.map.hash" />
+      </dd>
 
       <dt>Game type</dt>
       <dd>{{ replayData.game.type }}</dd>
@@ -33,10 +36,12 @@
 
 <script>
 import ModName from './ModName.vue';
+import MapInfo from './MapInfo.vue';
 
 export default {
   components: {
     ModName,
+    MapInfo,
   },
   computed: {
     replayData() {
