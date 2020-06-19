@@ -4,7 +4,7 @@
       <b-alert variant="danger" dismissible :show="hasError">
         {{ errorMessage }}
       </b-alert>
-      <fieldset ref="fieldset">
+      <fieldset :disabled=isLoading>
         <b-form-group label="Replay file" label-for="input-replay-data">
           <b-form-file
             v-model="file"
@@ -15,17 +15,19 @@
             Choose or drag and drop an <strong>.orarep</strong> file.
           </small>
         </b-form-group>
-        <b-btn type="submit" variant="primary">Submit</b-btn>
+        <b-btn type="submit" variant="primary">
+          Submit
+          <b-spinner small v-if="isLoading"></b-spinner>
+        </b-btn>
       </fieldset>
     </b-form>
   </div>
 </template>
 
 <script>
-import replayDataStore from '../store/modules/replayData';
-import modDataStore from '../store/modules/modData';
+import { EventBus } from '../event-bus.js';
 
-const API_URL = 'http://li2152-223.members.linode.com/replays/data';
+const GEM_ENDPOINT = 'http://li2152-223.members.linode.com/replays/data';
 
 export default {
   data() {
@@ -34,11 +36,12 @@ export default {
       hasError: false,
       errorMessage: '',
       file: null,
+      replayJSON: null,
     };
   },
   computed: {
-    supportedMods() {
-      return this.$store.state.settings.supportedMods;
+    isLoading() {
+      return this.$store.state.settings.isLoading;
     },
   },
   methods: {
@@ -46,69 +49,32 @@ export default {
       e.preventDefault();
 
       if (this.file) {
-        this.disableInput();
+        this.$store.commit('settings/setLoadingState', true);
 
         const formData = new FormData(e.target);
         formData.append('data', this.file);
 
-        fetch(API_URL, {
+        fetch(GEM_ENDPOINT, {
           method: 'POST',
           body: formData
         }).then(
           response => response.json()
         ).then(replayJSON => {
-          this.registerReplayDataStore(replayJSON);
-          this.registerModDataStore(replayJSON);
+          this.replayJSON = replayJSON;
+          this.onReplayDataReady();
         }).catch(e => {
           this.setError(e);
-          this.enableInput();
+          this.$store.commit('settings/setLoadingState', false);
         });
       }
+    },
+    onReplayDataReady() {
+      EventBus.$emit('replayDataReady', this.replayJSON);
     },
     setError(e) {
       this.isValid = false;
       this.hasError = true;
       this.errorMessage = `${e.name}: ${e.message}`;
-    },
-    disableInput() {
-      this.$refs.fieldset.setAttribute('disabled', 'disabled');
-    },
-    enableInput() {
-      this.$refs.fieldset.removeAttribute('disabled');
-    },
-    registerReplayDataStore(replayJSON) {
-      replayDataStore.state = replayJSON;
-      this.$store.registerModule('replayData', replayDataStore);
-    },
-    registerModDataStore(replayJSON) {
-      let mod = replayJSON.mod;
-      let isModSupported = this.supportedMods.includes(mod);
-
-      if (!isModSupported) {
-        mod = 'default';
-      }
-
-      fetch('data/mods/' + mod + '.json')
-        .then(response => {
-          if (response.ok) {
-            return response.json();
-          }
-          throw new Error('Error fetching mod data.');
-        })
-        .then(modDataJSON => {
-          if (!isModSupported) {
-            modDataJSON.name = replayJSON.mod;
-          }
-
-          modDataStore.state = modDataJSON;
-          this.$store.registerModule('modData', modDataStore);
-          this.$store.commit('settings/setReplayDataReadyState', true);
-          this.$store.commit('settings/setCurrentMod', replayJSON.mod);
-        })
-        .catch(e => {
-          this.setError(e);
-          this.enableInput();
-        });
     },
   },
 };

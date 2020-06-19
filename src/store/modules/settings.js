@@ -2,9 +2,10 @@ const state = {
   appName: 'OpenRA Replay Analytics',
   supportedMods: ['cnc', 'ra', 'd2k', 'ts'],
   currentTab: null,
-  currentMod: 'ra',
+  currentMod: null,
   iconUrl: 'assets/mods/ra/icon.png',
-  isReplayDataReady: false,
+  isLoading: false,
+  isAnalyticsReady: false,
   timelineScalingFactor: 0.005,
   buildOrderViewMode: 'simple',
   buildOrderFilter: 'all',
@@ -20,8 +21,11 @@ const getters = {
 const actions = {};
 
 const mutations = {
-  setReplayDataReadyState(state, ready) {
-    state.isReplayDataReady = ready;
+  setAnalyticsReadyState(state, isReady) {
+    state.isAnalyticsReady = isReady;
+  },
+  setLoadingState(state, isLoading) {
+    state.isLoading = isLoading;
   },
   setCurrentTab(state, index) {
     state.currentTab = index;

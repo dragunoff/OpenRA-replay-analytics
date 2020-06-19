@@ -1,20 +1,22 @@
 <template>
   <b-form @submit="onSubmit($event)">
-    <fieldset ref="fieldset">
+    <fieldset :disabled=isLoading>
       <b-form-group label="Replay JSON" label-for="input-replay-data">
         <b-form-textarea name="replay-data" :rows="8" :max-rows="8" v-model="input" required :state="isValid"></b-form-textarea>
         <small class="form-text text-muted">
           Paste the JSON output of <strong>openra-ruby</strong> or <a href="data/sample/ra-1v1-sample.json" @click="loadSampleReplay($event)">load a sample 1v1 game</a>.
         </small>
       </b-form-group>
-      <b-btn type="submit" variant="primary">Submit</b-btn>
+      <b-btn type="submit" variant="primary">
+        Submit
+        <b-spinner small v-if="isLoading"></b-spinner>
+      </b-btn>
     </fieldset>
   </b-form>
 </template>
 
 <script>
-import replayDataStore from '../store/modules/replayData';
-import modDataStore from '../store/modules/modData';
+import { EventBus } from '../event-bus.js';
 
 export default {
   data() {
@@ -22,21 +24,26 @@ export default {
       isValid: null,
       hasError: false,
       errorMessage: '',
-      input: '',
+      input: null,
+      replayJSON: null,
     };
   },
   computed: {
-    supportedMods() {
-      return this.$store.state.settings.supportedMods;
+    isLoading() {
+      return this.$store.state.settings.isLoading;
     },
   },
   methods: {
     loadSampleReplay(e) {
       e.preventDefault();
 
-      const url = e.target.getAttribute('href');
+      if (this.isLoading) {
+        return;
+      }
 
-      fetch(url)
+      this.$store.commit('settings/setLoadingState', true);
+
+      fetch(e.target.getAttribute('href'))
         .then(response => {
           if (response.ok) {
             return response.text();
@@ -45,72 +52,35 @@ export default {
         })
         .then(replayDataJSON => {
           this.input = replayDataJSON;
+          this.$store.commit('settings/setLoadingState', false);
         })
         .catch(e => {
           this.setError(e);
-          this.enableInput();
+          this.$store.commit('settings/setLoadingState', false);
         });
     },
     onSubmit(e) {
       e.preventDefault();
 
       if (this.input) {
-        this.disableInput();
+        this.$store.commit('settings/setLoadingState', true);
 
         try {
-          let replayJSON = JSON.parse(this.input);
-          this.registerReplayDataStore(replayJSON);
-          this.registerModDataStore(replayJSON);
+          this.replayJSON = JSON.parse(this.input);
+          this.onReplayDataReady();
         } catch (e) {
           this.setError(e);
-          this.enableInput();
+          this.$store.commit('settings/setLoadingState', false);
         }
       }
+    },
+    onReplayDataReady() {
+      EventBus.$emit('replayDataReady', this.replayJSON);
     },
     setError(e) {
       this.isValid = false;
       this.hasError = true;
       this.errorMessage = `${e.name}: ${e.message}`;
-    },
-    disableInput() {
-      this.$refs.fieldset.setAttribute('disabled', 'disabled');
-    },
-    enableInput() {
-      this.$refs.fieldset.removeAttribute('disabled');
-    },
-    registerReplayDataStore(replayJSON) {
-      replayDataStore.state = replayJSON;
-      this.$store.registerModule('replayData', replayDataStore);
-    },
-    registerModDataStore(replayJSON) {
-      let mod = replayJSON.mod;
-      let isModSupported = this.supportedMods.includes(mod);
-
-      if (!isModSupported) {
-        mod = 'default';
-      }
-
-      fetch('data/mods/' + mod + '.json')
-        .then(response => {
-          if (response.ok) {
-            return response.json();
-          }
-          throw new Error('Error fetching mod data.');
-        })
-        .then(modDataJSON => {
-          if (!isModSupported) {
-            modDataJSON.name = replayJSON.mod;
-          }
-
-          modDataStore.state = modDataJSON;
-          this.$store.registerModule('modData', modDataStore);
-          this.$store.commit('settings/setReplayDataReadyState', true);
-          this.$store.commit('settings/setCurrentMod', replayJSON.mod);
-        })
-        .catch(e => {
-          this.setError(e);
-          this.enableInput();
-        });
     },
   },
 };

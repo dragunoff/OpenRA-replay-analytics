@@ -4,7 +4,7 @@
       <img :src="iconUrl" class="d-inline-block align-top" alt="">
       {{ headerText }}
     </b-navbar-brand>
-    <b-btn v-if="isReplayDataReady" type="button" variant="outline-primary" size="sm" @click="loadNewReplay">Load New Replay</b-btn>
+    <b-btn v-if="isAnalyticsReady" type="button" variant="outline-primary" size="sm" @click="loadNewReplay">Load New Replay</b-btn>
   </b-navbar>
 </template>
 
@@ -17,8 +17,8 @@ export default {
     headerText() {
       return this.$store.state.settings.appName;
     },
-    isReplayDataReady() {
-      return this.$store.state.settings.isReplayDataReady;
+    isAnalyticsReady() {
+      return this.$store.state.settings.isAnalyticsReady;
     },
   },
   methods: {

@@ -10,6 +10,8 @@
 </template>
 
 <script>
+const RC_ENDPOINT = 'https://resource.openra.net/map/hash/';
+
 export default {
   props: {
     hash: String,
@@ -20,7 +22,7 @@ export default {
     };
   },
   created() {
-    fetch("https://resource.openra.net/map/hash/" + this.hash)
+    fetch(RC_ENDPOINT + this.hash)
       .then(response => {
         if (response.ok) {
           return response.clone().json();

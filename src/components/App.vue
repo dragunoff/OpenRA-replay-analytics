@@ -5,35 +5,11 @@
 
     <div class="container-fluid my-5">
 
-      <HeaderDefault v-if="!isReplayDataReady"/>
-      <Header v-if="isReplayDataReady"/>
+      <HeaderDefault v-if="!isAnalyticsReady"/>
+      <Header v-if="isAnalyticsReady"/>
 
-      <b-tabs card v-if="!isReplayDataReady">
-        <b-tab title="Upload Replay" active>
-          <ReplayFileInput />
-        </b-tab>
-        <b-tab title="Paste JSON">
-          <ReplayDataInput />
-        </b-tab>
-      </b-tabs>
-
-      <b-tabs card @input="onTabActivated" v-if="isReplayDataReady">
-        <b-tab title="Game Info" active>
-          <TabGameInfo />
-        </b-tab>
-
-        <b-tab title="Clients">
-          <TabClients />
-        </b-tab>
-
-        <b-tab title="Build Orders &amp; Powers">
-          <TabBuildOrders />
-        </b-tab>
-
-        <b-tab title="Chat">
-          <TabChat />
-        </b-tab>
-      </b-tabs>
+      <Input v-if="!isAnalyticsReady" />
+      <Analytics v-if="isAnalyticsReady" />
     </div>
 
     <Footer />
@@ -41,40 +17,77 @@
 </template>
 
 <script>
+import replayDataStore from '../store/modules/replayData';
+import modDataStore from '../store/modules/modData';
+import { EventBus } from '../event-bus.js';
+
 import Navbar from './Navbar.vue';
-import ReplayDataInput from './ReplayDataInput.vue';
-import ReplayFileInput from './ReplayFileInput.vue';
 import HeaderDefault from './HeaderDefault.vue';
 import Header from './Header.vue';
 import Footer from './Footer.vue';
-import TabGameInfo from './TabGameInfo.vue';
-import TabClients from './TabClients.vue';
-import TabBuildOrders from './TabBuildOrders.vue';
-import TabChat from './TabChat.vue';
+import Input from './Input.vue';
+import Analytics from './Analytics.vue';
 
 export default {
   name: 'app',
   computed: {
-    isReplayDataReady() {
-      return this.$store.state.settings.isReplayDataReady;
+    isAnalyticsReady() {
+      return this.$store.state.settings.isAnalyticsReady;
+    },
+    supportedMods() {
+      return this.$store.state.settings.supportedMods;
     },
   },
   components: {
     Navbar,
-    ReplayDataInput,
-    ReplayFileInput,
     HeaderDefault,
     Header,
     Footer,
-    TabGameInfo,
-    TabClients,
-    TabBuildOrders,
-    TabChat,
+    Input,
+    Analytics,
   },
   methods: {
-    onTabActivated(index) {
-      this.$store.commit('settings/setCurrentTab', index);
+    onReplayDataReady(replayJSON) {
+      this.registerReplayDataStore(replayJSON);
+      this.registerModDataStore(replayJSON);
     },
+    registerReplayDataStore(replayJSON) {
+      replayDataStore.state = replayJSON;
+      this.$store.registerModule('replayData', replayDataStore);
+    },
+    registerModDataStore(replayJSON) {
+      let mod = replayJSON.mod;
+      let isModSupported = this.supportedMods.includes(mod);
+
+      if (!isModSupported) {
+        mod = 'default';
+      }
+
+      fetch('data/mods/' + mod + '.json')
+        .then(response => {
+          if (response.ok) {
+            return response.json();
+          }
+          throw new Error('Error fetching mod data.');
+        })
+        .then(modDataJSON => {
+          if (!isModSupported) {
+            modDataJSON.name = replayJSON.mod;
+          }
+
+          modDataStore.state = modDataJSON;
+          this.$store.registerModule('modData', modDataStore);
+          this.$store.commit('settings/setAnalyticsReadyState', true);
+          this.$store.commit('settings/setCurrentMod', replayJSON.mod);
+        })
+        .catch(e => {
+          this.setError(e);
+          this.$store.commit('settings/setLoadingState', false);
+        });
+    },
+  },
+  created() {
+    EventBus.$on('replayDataReady', this.onReplayDataReady);
   },
 };
 </script>
