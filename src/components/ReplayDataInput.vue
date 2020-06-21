@@ -1,18 +1,23 @@
 <template>
-  <b-form @submit="onSubmit($event)">
-    <fieldset :disabled=isLoading>
-      <b-form-group label="Replay JSON" label-for="input-replay-data">
-        <b-form-textarea name="replay-data" :rows="8" :max-rows="8" v-model="input" required :state="isValid"></b-form-textarea>
-        <small class="form-text text-muted">
-          Paste the JSON output of <strong>openra-ruby</strong> or <a href="data/sample/ra-1v1-sample.json" @click="loadSampleReplay($event)">load a sample 1v1 game</a>.
-        </small>
-      </b-form-group>
-      <b-btn type="submit" variant="primary">
-        Submit
-        <b-spinner small v-if="isLoading"></b-spinner>
-      </b-btn>
-    </fieldset>
-  </b-form>
+  <div class="c-replay-data-input">
+    <b-form @submit="onSubmit($event)">
+      <b-alert variant="danger" dismissible :show="hasError">
+        {{ errorMessage }}
+      </b-alert>
+      <fieldset class="c-replay-file-input__fieldset" :disabled=isLoading>
+        <b-form-group label="Replay JSON" label-for="input-replay-data">
+          <b-form-textarea name="replay-data" :rows="8" :max-rows="8" v-model="input" required :state="isValid"></b-form-textarea>
+          <small class="form-text text-muted">
+            Paste the JSON output of <strong>openra-ruby</strong> or <a href="data/sample/ra-1v1-sample.json" @click="loadSampleReplay($event)">load a sample 1v1 game</a>.
+          </small>
+        </b-form-group>
+        <b-btn type="submit" variant="primary">
+          Submit
+          <b-spinner small v-if="isLoading"></b-spinner>
+        </b-btn>
+      </fieldset>
+    </b-form>
+  </div>
 </template>
 
 <script>
@@ -67,14 +72,14 @@ export default {
 
         try {
           this.replayJSON = JSON.parse(this.input);
-          this.onReplayDataReady();
+          this.replayDataReady();
         } catch (e) {
           this.setError(e);
           this.$store.commit('settings/setLoadingState', false);
         }
       }
     },
-    onReplayDataReady() {
+    replayDataReady() {
       EventBus.$emit('replayDataReady', this.replayJSON);
     },
     setError(e) {
@@ -85,3 +90,11 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+.c-replay-data-input {
+  &__fieldset {
+    max-width: 50rem;
+  }
+}
+</style>

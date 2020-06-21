@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div class="c-replay-file-input">
     <b-form @submit="onSubmit($event)">
       <b-alert variant="danger" dismissible :show="hasError">
         {{ errorMessage }}
       </b-alert>
-      <fieldset :disabled=isLoading>
+      <fieldset class="c-replay-file-input__fieldset" :disabled=isLoading>
         <b-form-group label="Replay file" label-for="input-replay-data">
           <b-form-file
             v-model="file"
@@ -32,7 +32,6 @@ const GEM_ENDPOINT = 'http://li2152-223.members.linode.com/replays/data';
 export default {
   data() {
     return {
-      isValid: null,
       hasError: false,
       errorMessage: '',
       file: null,
@@ -61,21 +60,28 @@ export default {
           response => response.json()
         ).then(replayJSON => {
           this.replayJSON = replayJSON;
-          this.onReplayDataReady();
+          this.replayDataReady();
         }).catch(e => {
           this.setError(e);
           this.$store.commit('settings/setLoadingState', false);
         });
       }
     },
-    onReplayDataReady() {
+    replayDataReady() {
       EventBus.$emit('replayDataReady', this.replayJSON);
     },
     setError(e) {
-      this.isValid = false;
       this.hasError = true;
       this.errorMessage = `${e.name}: ${e.message}`;
     },
   },
 };
 </script>
+
+<style lang="scss">
+.c-replay-file-input {
+  &__fieldset {
+    max-width: 50rem;
+  }
+}
+</style>

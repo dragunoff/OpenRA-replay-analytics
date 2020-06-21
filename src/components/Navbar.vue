@@ -4,7 +4,17 @@
       <img :src="iconUrl" class="d-inline-block align-top" alt="">
       {{ headerText }}
     </b-navbar-brand>
-    <b-btn v-if="isAnalyticsReady" type="button" variant="outline-primary" size="sm" @click="loadNewReplay">Load New Replay</b-btn>
+    <b-navbar-nav class="ml-auto">
+      <b-btn
+        v-if="isAnalyticsReady"
+        type="button"
+        variant="outline-primary"
+        size="sm"
+        @click="loadNewReplay"
+      >
+        Load New Replay
+      </b-btn>
+    </b-navbar-nav>
   </b-navbar>
 </template>
 

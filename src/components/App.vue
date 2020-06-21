@@ -1,14 +1,17 @@
 <template>
-  <div id="app">
+  <div id="app" class="d-flex flex-column min-vh-100">
 
     <Navbar />
 
-    <div class="container-fluid my-5">
+    <div class="container-fluid my-5 flex-grow-1">
 
       <HeaderDefault v-if="!isAnalyticsReady"/>
       <Header v-if="isAnalyticsReady"/>
 
       <Input v-if="!isAnalyticsReady" />
+      <hr v-if="!isAnalyticsReady" />
+      <StoredReplays v-if="!isAnalyticsReady" />
+
       <Analytics v-if="isAnalyticsReady" />
     </div>
 
@@ -27,6 +30,7 @@ import Header from './Header.vue';
 import Footer from './Footer.vue';
 import Input from './Input.vue';
 import Analytics from './Analytics.vue';
+import StoredReplays from './StoredReplays.vue';
 
 export default {
   name: 'app',
@@ -45,6 +49,7 @@ export default {
     Footer,
     Input,
     Analytics,
+    StoredReplays,
   },
   methods: {
     onReplayDataReady(replayJSON) {
@@ -77,11 +82,12 @@ export default {
 
           modDataStore.state = modDataJSON;
           this.$store.registerModule('modData', modDataStore);
-          this.$store.commit('settings/setAnalyticsReadyState', true);
           this.$store.commit('settings/setCurrentMod', replayJSON.mod);
+          this.$store.commit('settings/setAnalyticsReadyState', true);
+          EventBus.$emit('AnalyticsReady', replayJSON);
         })
         .catch(e => {
-          this.setError(e);
+          console.log(e);
           this.$store.commit('settings/setLoadingState', false);
         });
     },

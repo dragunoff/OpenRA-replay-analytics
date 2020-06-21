@@ -50,6 +50,35 @@ const getters = {
 
     return teams;
   },
+  versus(state, getters) {
+    const teams = getters.teams;
+    var versus = '';
+
+    _.forEach(teams, function(clients, teamName) {
+      if ('spectators' === teamName) {
+        return;
+      }
+
+      versus = versus ? `${versus} VS ` : '';
+      var playersNames = _.map(clients, 'name');
+      var sep = ', ';
+      var lastPlayer;
+
+      if ('ffa' === teamName) {
+        sep = ' VS ';
+      } else if (playersNames.length > 2) {
+        lastPlayer = playersNames.pop();
+      }
+
+      versus = versus + playersNames.join(sep);
+
+      if (lastPlayer) {
+        versus = versus + ' & ' + lastPlayer;
+      }
+    });
+
+    return versus;
+  },
   players(state, getters) {
     return _.omit(getters.teams, 'spectators');
   },
