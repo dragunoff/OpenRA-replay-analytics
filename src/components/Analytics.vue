@@ -25,7 +25,6 @@ import TabBuildOrders from './TabBuildOrders.vue';
 import TabChat from './TabChat.vue';
 
 export default {
-  name: 'app',
   components: {
     TabGameInfo,
     TabClients,

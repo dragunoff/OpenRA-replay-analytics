@@ -14,7 +14,6 @@ import ReplayDataInput from './ReplayDataInput.vue';
 import ReplayFileInput from './ReplayFileInput.vue';
 
 export default {
-  name: 'app',
   components: {
     ReplayDataInput,
     ReplayFileInput,
