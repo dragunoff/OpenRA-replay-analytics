@@ -27,8 +27,6 @@
 <script>
 import { EventBus } from '../event-bus.js';
 
-const GEM_ENDPOINT = 'http://li2152-223.members.linode.com/replays/data';
-
 export default {
   data() {
     return {
@@ -53,7 +51,7 @@ export default {
         const formData = new FormData(e.target);
         formData.append('data', this.file);
 
-        fetch(GEM_ENDPOINT, {
+        fetch(process.env.VUE_APP_OPENRA_API_ENDPOINT, {
           method: 'POST',
           body: formData
         }).then(
