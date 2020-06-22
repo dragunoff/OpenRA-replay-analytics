@@ -15,10 +15,7 @@
             Choose or drag and drop an <strong>.orarep</strong> file.
           </small>
         </b-form-group>
-        <b-btn type="submit" variant="primary">
-          Submit
-          <b-spinner small v-if="isLoading"></b-spinner>
-        </b-btn>
+        <Submit />
       </fieldset>
     </b-form>
   </div>
@@ -27,7 +24,12 @@
 <script>
 import { EventBus } from '../event-bus.js';
 
+import Submit from './Submit.vue';
+
 export default {
+  components: {
+    Submit,
+  },
   data() {
     return {
       hasError: false,

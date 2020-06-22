@@ -135,6 +135,8 @@ export default {
         return;
       }
 
+      this.$store.commit('settings/setLoadingState', true);
+
       try {
         if (!e.data) {
           throw new Error('Error loading stored replay data.');
@@ -150,7 +152,6 @@ export default {
     replayDataReady() {
       EventBus.$off('AnalyticsReady', this.onAnalyticsReady);
       EventBus.$emit('replayDataReady', this.replayJSON);
-      this.$store.commit('settings/setLoadingState', true);
     },
     setError(e) {
       this.hasError = true;

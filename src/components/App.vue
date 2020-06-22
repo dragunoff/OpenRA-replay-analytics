@@ -9,9 +9,6 @@
       <Header v-if="isAnalyticsReady"/>
 
       <Input v-if="!isAnalyticsReady" />
-      <hr v-if="!isAnalyticsReady" />
-      <StoredReplays v-if="!isAnalyticsReady" />
-
       <Analytics v-if="isAnalyticsReady" />
     </div>
 
@@ -30,7 +27,6 @@ import Header from './Header.vue';
 import Footer from './Footer.vue';
 import Input from './Input.vue';
 import Analytics from './Analytics.vue';
-import StoredReplays from './StoredReplays.vue';
 
 export default {
   name: 'app',
@@ -49,7 +45,6 @@ export default {
     Footer,
     Input,
     Analytics,
-    StoredReplays,
   },
   methods: {
     onReplayDataReady(replayJSON) {

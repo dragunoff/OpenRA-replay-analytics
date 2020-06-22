@@ -11,10 +11,7 @@
             Paste the JSON output of <strong>openra-ruby</strong> or <a href="data/sample/ra-1v1-sample.json" @click="loadSampleReplay($event)">load a sample 1v1 game</a>.
           </small>
         </b-form-group>
-        <b-btn type="submit" variant="primary">
-          Submit
-          <b-spinner small v-if="isLoading"></b-spinner>
-        </b-btn>
+        <Submit />
       </fieldset>
     </b-form>
   </div>
@@ -23,7 +20,12 @@
 <script>
 import { EventBus } from '../event-bus.js';
 
+import Submit from './Submit.vue';
+
 export default {
+  components: {
+    Submit,
+  },
   data() {
     return {
       isValid: null,
