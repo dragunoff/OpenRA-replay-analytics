@@ -1,7 +1,7 @@
 <template>
   <b-jumbotron>
     <h1 class="display-4">{{ versus }}</h1>
-    <p class="lead">on map "{{ map.name }}" in <ModName /></p>
+    <p class="lead">on "{{ map.name }}" in <ModName /></p>
   </b-jumbotron>
 </template>
 
@@ -24,7 +24,7 @@ export default {
     },
   },
   created() {
-    document.title = `${this.versus} on map "${this.map.name}" in ${this.modName} | ${
+    document.title = `${this.versus} on "${this.map.name}" in ${this.modName} | ${
       this.$store.state.settings.appName
     }`;
   },

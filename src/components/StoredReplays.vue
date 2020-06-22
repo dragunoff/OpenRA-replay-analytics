@@ -53,7 +53,7 @@
     >
       <template v-slot:cell(gameInfo)="data">
         <h4 class="h5">{{ data.item.versus }}</h4>
-        <span>on map "{{ data.item.data.map.name }}" in {{ data.item.modName }}</span>
+        <span>on "{{ data.item.data.map.name }}" in {{ data.item.modName }}</span>
       </template>
 
       <template v-slot:cell(duration)="data">
