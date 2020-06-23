@@ -1,5 +1,5 @@
 <template>
-  <div class="c-stored-replays" v-bind:class="{ 'is-loading': isLoading }">
+  <div class="c-stored-replays" v-bind:class="{ 'is-input-disabled': isInputDisabled }">
 
     <b-row>
 
@@ -103,8 +103,8 @@ export default {
     hasStored() {
       return this.storedReplays.length > 0;
     },
-    isLoading() {
-      return this.$store.state.settings.isLoading;
+    isInputDisabled() {
+      return this.$store.state.settings.isInputDisabled;
     },
   },
   methods: {
@@ -131,7 +131,7 @@ export default {
       localStorage.setItem('storedReplays', JSON.stringify(this.storedReplays));
     },
     loadReplay(e) {
-      if (this.isLoading) {
+      if (this.isInputDisabled) {
         return;
       }
 
@@ -183,11 +183,11 @@ export default {
     cursor: pointer;
   }
 
-  &.is-loading {
+  &.is-input-disabled {
     pointer-events: none;
   }
 
-  &.is-loading td {
+  &.is-input-disabled td {
     cursor: default;
   }
 }

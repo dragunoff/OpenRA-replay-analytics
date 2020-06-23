@@ -1,8 +1,18 @@
 <template>
-  <b-btn type="submit" variant="primary">
-    {{ isLoading ? 'Analyzing Replay&hellip;' : 'Submit' }}
-    <Spinner v-if="isLoading" />
-  </b-btn>
+  <div>
+    <b-btn
+      type="submit"
+      variant="primary"
+      :disabled="isInputDisabled"
+      @click="onClick"
+    >
+      {{ isLoading ? this.loadingLabel : this.defaultLabel }}
+      <Spinner v-if="isLoading" />
+    </b-btn>
+    <small class="d-block mt-2 text-muted" v-if="isTakingTooLong && isLoading">
+      Please be patient, large replays may take several minutes to process.
+    </small>
+  </div>
 </template>
 
 <script>
@@ -12,10 +22,56 @@ export default {
   components: {
     Spinner,
   },
+  data() {
+    return {
+      defaultLabel: 'Submit',
+      loadingLabel: 'Submit',
+      isTakingTooLong: false,
+      delay: 5000,
+    }
+  },
   computed: {
     isLoading() {
       return this.$store.state.settings.isLoading;
     },
+    isInputDisabled() {
+      return this.$store.state.settings.isInputDisabled;
+    },
   },
+  methods: {
+    onClick() {
+      this.resetState();
+      setTimeout(this.updateLabel, 0, Date.now());
+    },
+    resetState() {
+      this.loadingLabel = this.defaultLabel;
+      this.isTakingTooLong = false;
+    },
+    updateLabel(startTime) {
+      if (!this.isLoading) {
+        this.resetState();
+        return;
+      }
+
+      const elapsed = Date.now() - startTime;
+
+      if (elapsed >= this.delay * 4) {
+        this.isTakingTooLong = true;
+        return;
+      }
+
+      if (elapsed >= this.delay * 3) {
+        this.loadingLabel = 'Engineering...';
+      } else if (elapsed >= this.delay * 2) {
+        this.loadingLabel = 'Examining diagrams...';
+      } else if (elapsed >= this.delay) {
+        this.loadingLabel = 'Studying blue prints...';
+      } else {
+        this.loadingLabel = 'Analyzing schematics...';
+      }
+
+      setTimeout(this.updateLabel, this.delay, startTime);
+    }
+  }
 };
 </script>

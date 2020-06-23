@@ -1,12 +1,12 @@
 <template>
   <b-tabs card @input="onTabActivated">
-    <b-tab title="Upload Replay" :disabled="isLoading && currentTab !== 0">
+    <b-tab title="Upload Replay" :disabled="isInputDisabled && currentTab !== 0">
       <ReplayFileInput />
     </b-tab>
-    <b-tab title="Paste JSON" :disabled="isLoading && currentTab !== 1">
+    <b-tab title="Paste JSON" :disabled="isInputDisabled && currentTab !== 1">
       <ReplayDataInput />
     </b-tab>
-    <b-tab title="Stored Replays" :disabled="isLoading && currentTab !== 2">
+    <b-tab title="Stored Replays" :disabled="isInputDisabled && currentTab !== 2">
       <StoredReplays />
     </b-tab>
   </b-tabs>
@@ -29,8 +29,8 @@ export default {
     }
   },
   computed: {
-    isLoading() {
-      return this.$store.state.settings.isLoading;
+    isInputDisabled() {
+      return this.$store.state.settings.isInputDisabled;
     },
   },
   methods: {

@@ -4,6 +4,7 @@ const state = {
   currentTab: null,
   currentMod: null,
   iconUrl: 'assets/mods/ra/icon.png',
+  isInputDisabled: false,
   isLoading: false,
   isAnalyticsReady: false,
   timelineScalingFactor: 0.005,
@@ -24,8 +25,12 @@ const mutations = {
   setAnalyticsReadyState(state, isReady) {
     state.isAnalyticsReady = isReady;
   },
+  setInputDisabledState(state, isInputDisabled) {
+    state.isInputDisabled = isInputDisabled;
+  },
   setLoadingState(state, isLoading) {
     state.isLoading = isLoading;
+    state.isInputDisabled = isLoading;
   },
   setCurrentTab(state, index) {
     state.currentTab = index;

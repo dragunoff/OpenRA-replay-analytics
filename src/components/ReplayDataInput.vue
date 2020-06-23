@@ -4,7 +4,7 @@
       <b-alert variant="danger" dismissible :show="hasError">
         {{ errorMessage }}
       </b-alert>
-      <fieldset class="c-replay-file-input__fieldset" :disabled=isLoading>
+      <fieldset class="c-replay-file-input__fieldset" :disabled="isInputDisabled">
         <b-form-group label="Replay JSON" label-for="input-replay-data">
           <b-form-textarea name="replay-data" :rows="8" :max-rows="8" v-model="input" required :state="isValid"></b-form-textarea>
           <small class="form-text text-muted">
@@ -36,19 +36,19 @@ export default {
     };
   },
   computed: {
-    isLoading() {
-      return this.$store.state.settings.isLoading;
+    isInputDisabled() {
+      return this.$store.state.settings.isInputDisabled;
     },
   },
   methods: {
     loadSampleReplay(e) {
       e.preventDefault();
 
-      if (this.isLoading) {
+      if (this.isInputDisabled) {
         return;
       }
 
-      this.$store.commit('settings/setLoadingState', true);
+      this.$store.commit('settings/setInputDisabledState', true);
 
       fetch(e.target.getAttribute('href'))
         .then(response => {
@@ -59,20 +59,29 @@ export default {
         })
         .then(replayDataJSON => {
           this.input = replayDataJSON;
-          this.$store.commit('settings/setLoadingState', false);
+          this.$store.commit('settings/setInputDisabledState', false);
         })
         .catch(e => {
           this.setError(e);
-          this.$store.commit('settings/setLoadingState', false);
+          this.$store.commit('settings/setInputDisabledState', false);
         });
     },
     onSubmit(e) {
       e.preventDefault();
+
+      if (this.isInputDisabled) {
+        return;
+      }
+
       this.clearError();
 
-      if (this.input) {
-        this.$store.commit('settings/setLoadingState', true);
+      if (!this.input) {
+        return;
+      }
 
+      this.$store.commit('settings/setLoadingState', true);
+
+      setTimeout(() => {
         try {
           this.replayJSON = JSON.parse(this.input);
           this.replayDataReady();
@@ -80,7 +89,7 @@ export default {
           this.setError(e);
           this.$store.commit('settings/setLoadingState', false);
         }
-      }
+      }, 0);
     },
     replayDataReady() {
       EventBus.$emit('ReplayDataReady', this.replayJSON);

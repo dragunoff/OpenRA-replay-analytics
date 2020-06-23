@@ -4,7 +4,7 @@
       <b-alert variant="danger" dismissible :show="hasError">
         {{ errorMessage }}
       </b-alert>
-      <fieldset class="c-replay-file-input__fieldset" :disabled=isLoading>
+      <fieldset class="c-replay-file-input__fieldset" :disabled="isInputDisabled">
         <b-form-group label="Replay file" label-for="input-replay-data">
           <b-form-file
             v-model="file"
@@ -39,21 +39,30 @@ export default {
     };
   },
   computed: {
-    isLoading() {
-      return this.$store.state.settings.isLoading;
+    isInputDisabled() {
+      return this.$store.state.settings.isInputDisabled;
     },
   },
   methods: {
     onSubmit(e) {
       e.preventDefault();
+
+      if (this.isInputDisabled) {
+        return;
+      }
+
       this.clearError();
 
-      if (this.file) {
-        this.$store.commit('settings/setLoadingState', true);
+      if (!this.file) {
+        return;
+      }
 
-        const formData = new FormData(e.target);
-        formData.append('data', this.file);
+      this.$store.commit('settings/setLoadingState', true);
 
+      const formData = new FormData(e.target);
+      formData.append('data', this.file);
+
+      setTimeout(() => {
         fetch(process.env.VUE_APP_OPENRA_API_ENDPOINT, {
           method: 'POST',
           body: formData
@@ -66,7 +75,7 @@ export default {
           this.setError(e);
           this.$store.commit('settings/setLoadingState', false);
         });
-      }
+      }, 0);
     },
     replayDataReady() {
       EventBus.$emit('ReplayDataReady', this.replayJSON);
