@@ -135,6 +135,7 @@ export default {
         return;
       }
 
+      this.clearError();
       this.$store.commit('settings/setLoadingState', true);
 
       try {
@@ -151,11 +152,15 @@ export default {
     },
     replayDataReady() {
       EventBus.$off('AnalyticsReady', this.onAnalyticsReady);
-      EventBus.$emit('replayDataReady', this.replayJSON);
+      EventBus.$emit('ReplayDataReady', this.replayJSON);
     },
     setError(e) {
       this.hasError = true;
       this.errorMessage = `${e.name}: ${e.message}`;
+    },
+    clearError() {
+      this.hasError = false;
+      this.errorMessage = null;
     },
   },
   mounted() {

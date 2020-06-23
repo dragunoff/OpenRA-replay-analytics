@@ -88,7 +88,7 @@ export default {
     },
   },
   created() {
-    EventBus.$on('replayDataReady', this.onReplayDataReady);
+    EventBus.$on('ReplayDataReady', this.onReplayDataReady);
   },
 };
 </script>

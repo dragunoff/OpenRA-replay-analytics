@@ -30,7 +30,7 @@ export default {
     return {
       isValid: null,
       hasError: false,
-      errorMessage: '',
+      errorMessage: null,
       input: null,
       replayJSON: null,
     };
@@ -68,6 +68,7 @@ export default {
     },
     onSubmit(e) {
       e.preventDefault();
+      this.clearError();
 
       if (this.input) {
         this.$store.commit('settings/setLoadingState', true);
@@ -82,12 +83,17 @@ export default {
       }
     },
     replayDataReady() {
-      EventBus.$emit('replayDataReady', this.replayJSON);
+      EventBus.$emit('ReplayDataReady', this.replayJSON);
     },
     setError(e) {
       this.isValid = false;
       this.hasError = true;
       this.errorMessage = `${e.name}: ${e.message}`;
+    },
+    clearError() {
+      this.isValid = null;
+      this.hasError = false;
+      this.errorMessage = null;
     },
   },
 };

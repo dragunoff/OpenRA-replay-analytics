@@ -33,7 +33,7 @@ export default {
   data() {
     return {
       hasError: false,
-      errorMessage: '',
+      errorMessage: null,
       file: null,
       replayJSON: null,
     };
@@ -46,6 +46,7 @@ export default {
   methods: {
     onSubmit(e) {
       e.preventDefault();
+      this.clearError();
 
       if (this.file) {
         this.$store.commit('settings/setLoadingState', true);
@@ -68,11 +69,15 @@ export default {
       }
     },
     replayDataReady() {
-      EventBus.$emit('replayDataReady', this.replayJSON);
+      EventBus.$emit('ReplayDataReady', this.replayJSON);
     },
     setError(e) {
       this.hasError = true;
       this.errorMessage = `${e.name}: ${e.message}`;
+    },
+    clearError() {
+      this.hasError = false;
+      this.errorMessage = null;
     },
   },
 };
