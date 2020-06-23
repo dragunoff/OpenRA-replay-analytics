@@ -7,7 +7,7 @@
       @click="onClick"
     >
       {{ isLoading ? this.loadingLabel : this.defaultLabel }}
-      <Spinner v-if="isLoading" />
+      <Spinner v-bind:class="{ 'd-none': !isLoading }" />
     </b-btn>
     <small class="d-block mt-2 text-muted" v-if="isTakingTooLong && isLoading">
       Please be patient, large replays may take several minutes to process.
