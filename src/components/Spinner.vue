@@ -10,7 +10,7 @@ export default {
     spinnerUrl() {
       let href = window.location.href.replace(/\/$/, '');
 
-      return href + '/assets/spinner.png';
+      return href + '/assets/spinner.webp';
     },
   },
 }
@@ -19,16 +19,16 @@ export default {
 <style lang="scss">
 .c-spinner {
   display: inline-block;
-  width: 19px;
-  height: 19px;
+  width: 18px;
+  height: 18px;
 
   &__img {
     display: inline-block;
     width: 100%;
     height: auto;
     image-rendering: crisp-edges;
-    margin-top: -7px;
-    margin-right: -5px;
+    margin-top: -3px;
+    margin-right: -8px;
   }
 }
 </style>
