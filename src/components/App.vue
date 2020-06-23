@@ -6,10 +6,10 @@
     <div class="container-fluid my-5 flex-grow-1">
 
       <HeaderDefault v-if="!isAnalyticsReady"/>
-      <Header v-if="isAnalyticsReady"/>
+      <Header v-else />
 
       <Input v-if="!isAnalyticsReady" />
-      <Analytics v-if="isAnalyticsReady" />
+      <Analytics v-else />
     </div>
 
     <Footer />

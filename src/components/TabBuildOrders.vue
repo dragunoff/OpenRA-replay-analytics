@@ -22,8 +22,8 @@
         </div>
 
         <BuildOrdersTimeline :teams="teams" v-if="buildOrderViewMode === 'timeline'" />
-        <BuildOrdersSimple :teams="teams" v-if="buildOrderViewMode === 'simple'" />
-        <BuildOrdersStats :teams="teams" v-if="buildOrderViewMode === 'stats'" />
+        <BuildOrdersSimple :teams="teams" v-else-if="buildOrderViewMode === 'simple'" />
+        <BuildOrdersStats :teams="teams" v-else-if="buildOrderViewMode === 'stats'" />
 
     </div>
 
