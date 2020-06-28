@@ -8,13 +8,17 @@
 export default {
   props: {
     faction: Object,
+    mod: {
+      type: String,
+      default: null,
+    },
   },
   computed: {
     actual() {
-      return this.$store.getters['modData/factionInfo'](this.faction.actual);
+      return this.$store.getters['modData/factionInfo'](this.faction.actual, this.mod);
     },
     chosen() {
-      return this.$store.getters['modData/factionInfo'](this.faction.chosen);
+      return this.$store.getters['modData/factionInfo'](this.faction.chosen, this.mod);
     },
   },
 };

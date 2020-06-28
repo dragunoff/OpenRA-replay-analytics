@@ -17,16 +17,17 @@ export default {
   props: {
     id: {
       type: String,
-      default: '',
+      default: null,
+    },
+    mod: {
+      type: String,
+      default: null,
     },
     type: {
       type: String,
       default: 'actor',
     },
-    game_time: {
-      type: Object,
-      default: () => {},
-    },
+    game_time: Object,
     width: {
       type: Number,
       default: 64,
@@ -54,10 +55,10 @@ export default {
     },
     info() {
       if (this.type === 'support_power') {
-        return this.$store.getters['modData/supportPowerInfo'](this.id);
+        return this.$store.getters['modData/supportPowerInfo'](this.id, this.mod);
       }
 
-      return this.$store.getters['modData/actorInfo'](this.id);
+      return this.$store.getters['modData/actorInfo'](this.id, this.mod);
     },
     name() {
       return this.info.name;

@@ -7,6 +7,14 @@
   </b-jumbotron>
 </template>
 
+<script>
+export default {
+  created() {
+    document.title = `${this.$store.state.settings.appName}`;
+  },
+};
+</script>
+
 <style lang="scss">
 .c-header-default {
   max-width: 900px;

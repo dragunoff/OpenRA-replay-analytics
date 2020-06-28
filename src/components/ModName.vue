@@ -6,9 +6,15 @@
 
 <script>
 export default {
+  props: {
+    mod: {
+      type: String,
+      default: null,
+    },
+  },
   computed: {
     modName() {
-      return this.$store.getters['modData/modName'];
+      return this.$store.getters['modData/modName'](this.mod);
     },
   },
 };

@@ -1,6 +1,5 @@
 const state = {
   appName: 'OpenRA Replay Analytics',
-  supportedMods: ['cnc', 'ra', 'd2k', 'ts'],
   currentTab: null,
   currentMod: null,
   iconUrl: 'assets/mods/ra/icon.png',

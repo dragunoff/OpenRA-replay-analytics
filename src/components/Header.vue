@@ -14,7 +14,7 @@ export default {
   },
   computed: {
     modName() {
-      return this.$store.getters['modData/modName'];
+      return this.$store.getters['modData/modName']();
     },
     map() {
       return this.$store.state.replayData.map;

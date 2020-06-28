@@ -1,78 +1,106 @@
 import _ from 'lodash';
+import * as defaultMod from '../data/default.json';
+import * as cnc from '../data/cnc.json';
+import * as ra from '../data/ra.json';
+import * as d2k from '../data/d2k.json';
+import * as ts from '../data/ts.json';
 
-const state = {};
+const state = {
+  'default': defaultMod.default,
+  'cnc': cnc.default,
+  'ra': ra.default,
+  'd2k': d2k.default,
+  'ts': ts.default,
+};
 
 const getters = {
-  modName: (state, getters, rootState) => {
-    const id = rootState.replayData.mod;
-    let name = '';
+  modName: (state, getters, rootState) => mod => {
+    mod = mod ? mod.toLowerCase() : rootState.replayData.mod;
 
-    if (Object.prototype.hasOwnProperty.call(state, 'name')) {
-      name = state.name;
+    if (
+      Object.prototype.hasOwnProperty.call(state, mod)
+      && Object.prototype.hasOwnProperty.call(state[mod], 'name')
+    ) {
+      return state[mod].name;
     } else {
-      name = id;
+      return mod;
     }
-
-    return name;
   },
-  isModSupported: (state, getters, rootState) => () => {
-    const mod = rootState.replayData.mod;
-    const supportedMods = rootState.settings.supportedMods;
-
-    return supportedMods.includes(mod);
-  },
-  modFeatures: (state) => {
+  modFeatures: (state, getters, rootState) => mod => {
+    mod = mod ? mod.toLowerCase() : rootState.replayData.mod;
     let features = [];
 
-    if (Object.prototype.hasOwnProperty.call(state, 'features')) {
-      features = state.features;
+    if (
+      Object.prototype.hasOwnProperty.call(state, mod)
+      && Object.prototype.hasOwnProperty.call(state[mod], 'features')
+    ) {
+      features = state[mod].features;
     }
 
     return features;
   },
-  factionInfo: (state) => id => {
+  factionInfo: (state, getters, rootState) => (id, mod) => {
     id = id.toLowerCase();
+    mod = mod ? mod.toLowerCase() : rootState.replayData.mod;
 
-    if (!Object.prototype.hasOwnProperty.call(state, 'factions')) {
-      return false;
+    if (
+      !Object.prototype.hasOwnProperty.call(state, mod)
+      || !Object.prototype.hasOwnProperty.call(state[mod], 'factions')
+    ) {
+      return null;
     }
 
-    if (!Object.prototype.hasOwnProperty.call(state.factions, id)) {
+    if (!Object.prototype.hasOwnProperty.call(state[mod].factions, id)) {
       return { 'id': id, 'name': id };
     }
 
-    return state.factions[id];
+    return state[mod].factions[id];
   },
-  actorInfo: (state) => id => {
-    if (!Object.prototype.hasOwnProperty.call(state, 'actors')) {
-      return false;
+  actorInfo: (state, getters, rootState) => (id, mod) => {
+    id = id.toLowerCase();
+    mod = mod ? mod.toLowerCase() : rootState.replayData.mod;
+
+    if (
+      !Object.prototype.hasOwnProperty.call(state, mod)
+      || !Object.prototype.hasOwnProperty.call(state[mod], 'actors')
+    ) {
+      return null;
     }
 
-    if (!Object.prototype.hasOwnProperty.call(state.actors, id)) {
+    if (!Object.prototype.hasOwnProperty.call(state[mod].actors, id)) {
       return { 'id': id, 'name': id, 'type': 'unknown' };
     }
 
-    return state.actors[id];
+    return state[mod].actors[id];
   },
-  supportPowerInfo: (state) => id => {
-    if (!Object.prototype.hasOwnProperty.call(state, 'support_powers')) {
-      return false;
+  supportPowerInfo: (state, getters, rootState) => (id, mod) => {
+    id = id.toLowerCase();
+    mod = mod ? mod.toLowerCase() : rootState.replayData.mod;
+
+    if (
+      !Object.prototype.hasOwnProperty.call(state, mod)
+      || !Object.prototype.hasOwnProperty.call(state[mod], 'support_powers')
+    ) {
+      return null;
     }
 
-    if (!Object.prototype.hasOwnProperty.call(state.support_powers, id)) {
+    if (!Object.prototype.hasOwnProperty.call(state[mod].support_powers, id)) {
       return { 'id': id, 'name': id, 'type': 'unknown' };
     }
 
-    return state.support_powers[id];
+    return state[mod].support_powers[id];
   },
-  buildings: (state) => {
-    return _.filter(state.actors, ['type', 'building']);
+  buildings: (state, getters, rootState) => {
+    const mod = rootState.replayData.mod;
+    return _.filter(state[mod].actors, ['type', 'building']);
   },
-  defences: (state) => {
-    return _.filter(state.actors, ['type', 'defence']);
+  defences: (state, getters, rootState) => {
+    const mod = rootState.replayData.mod;
+    return _.filter(state[mod].actors, ['type', 'defence']);
   },
-  support_powers: (state) => {
-    return _.filter(state.support_powers, ['type', 'support_power']);
+  support_powers: (state, getters, rootState) => {
+    const mod = rootState.replayData.mod;
+    return _.filter(state[mod].support_powers, ['type', 'support_power']);
   },
 };
 

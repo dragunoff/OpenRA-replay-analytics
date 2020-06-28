@@ -26,7 +26,7 @@ export default {
       return this.$store.state.settings.buildOrderFilter;
     },
     modFeatures() {
-      return this.$store.getters['modData/modFeatures'];
+      return this.$store.getters['modData/modFeatures']();
     },
   },
   methods: {

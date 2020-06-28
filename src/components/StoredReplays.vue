@@ -116,7 +116,7 @@ export default {
 
       this.storedReplays.unshift({
         versus: this.$store.getters['replayData/versus'],
-        modName: this.$store.getters['modData/modName'],
+        modName: this.$store.getters['modData/modName'](replayJSON.mod),
         timestamp: Date.now(),
         data: replayJSON
       });

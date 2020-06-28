@@ -18,7 +18,6 @@
 
 <script>
 import replayDataStore from '../store/modules/replayData';
-import modDataStore from '../store/modules/modData';
 import { EventBus } from '../event-bus.js';
 
 import Navbar from './Navbar.vue';
@@ -34,9 +33,6 @@ export default {
     isAnalyticsReady() {
       return this.$store.state.settings.isAnalyticsReady;
     },
-    supportedMods() {
-      return this.$store.state.settings.supportedMods;
-    },
   },
   components: {
     Navbar,
@@ -49,42 +45,14 @@ export default {
   methods: {
     onReplayDataReady(replayJSON) {
       this.registerReplayDataStore(replayJSON);
-      this.registerModDataStore(replayJSON);
+      this.$store.commit('settings/setCurrentMod', replayJSON.mod);
+      this.$store.commit('settings/setAnalyticsReadyState', true);
+      EventBus.$emit('AnalyticsReady', replayJSON);
+      this.$store.commit('settings/setLoadingState', false);
     },
     registerReplayDataStore(replayJSON) {
       replayDataStore.state = replayJSON;
       this.$store.registerModule('replayData', replayDataStore);
-    },
-    registerModDataStore(replayJSON) {
-      let mod = replayJSON.mod;
-      let isModSupported = this.supportedMods.includes(mod);
-
-      if (!isModSupported) {
-        mod = 'default';
-      }
-
-      fetch('data/mods/' + mod + '.json')
-        .then(response => {
-          if (response.ok) {
-            return response.json();
-          }
-          throw new Error('Error fetching mod data.');
-        })
-        .then(modDataJSON => {
-          if (!isModSupported) {
-            modDataJSON.name = replayJSON.mod;
-          }
-
-          modDataStore.state = modDataJSON;
-          this.$store.registerModule('modData', modDataStore);
-          this.$store.commit('settings/setCurrentMod', replayJSON.mod);
-          this.$store.commit('settings/setAnalyticsReadyState', true);
-          EventBus.$emit('AnalyticsReady', replayJSON);
-        })
-        .catch(e => {
-          console.log(e);
-          this.$store.commit('settings/setLoadingState', false);
-        });
     },
   },
   created() {
