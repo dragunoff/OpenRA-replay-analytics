@@ -16,6 +16,7 @@
       <b-col sm="5" md="6" class="my-2">
 
         <b-form-group
+          v-if="hasStored"
           label="Filter"
           label-cols-sm="3"
           label-align-sm="right"
