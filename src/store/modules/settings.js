@@ -36,7 +36,8 @@ const mutations = {
   },
   setCurrentMod(state, id) {
     state.currentMod = id;
-    state.iconUrl = state.iconUrl.replace(/(mods\/).+(\/)/, '$1' + id + '$2');
+    let iconName = id ? id : 'ra';
+    state.iconUrl = state.iconUrl.replace(/(mods\/).+(\/)/, '$1' + iconName + '$2');
   },
   setBuildOrderViewMode(state, payload) {
     state.buildOrderViewMode = payload.mode;

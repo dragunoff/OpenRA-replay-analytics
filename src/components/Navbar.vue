@@ -5,21 +5,18 @@
       {{ headerText }}
     </b-navbar-brand>
     <b-navbar-nav class="ml-auto">
-      <b-btn
-        v-if="isAnalyticsReady"
-        type="button"
-        variant="outline-primary"
-        size="sm"
-        @click="loadNewReplay"
-      >
-        Load New Replay
-      </b-btn>
+      <new-replay-button v-if="isAnalyticsReady" />
     </b-navbar-nav>
   </b-navbar>
 </template>
 
 <script>
+import NewReplayButton from './NewReplayButton.vue';
+
 export default {
+  components: {
+    NewReplayButton,
+  },
   computed: {
     iconUrl() {
       return this.$store.state.settings.iconUrl;
