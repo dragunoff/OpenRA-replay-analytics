@@ -8,11 +8,13 @@
         <div class="c-build-orders-timeline__order" :style="{ width: timelineSize + 'px' }">
 
           <div class="c-build-orders-timeline__actor" v-if="isBuildOrderTabActive">
-            <Actor v-for="(build, index) of player.build" :key="index" :id="build.structure" :game_time="build.game_time" />
-          </div>
-
-          <div class="c-build-orders-timeline__actor" v-if="isBuildOrderTabActive">
-            <Actor v-for="(support_power, index) of player.support_powers" :key="index" :id="support_power.type" :game_time="support_power.game_time" type="support_power" />
+            <Actor
+              v-for="(build, index) of mergeActors(player.build, player.support_powers)"
+              :key="`${build.actor_type}-${index}`"
+              :id="build.actor_id"
+              :game_time="build.game_time"
+              :type="build.actor_type"
+            />
           </div>
 
         </div>
@@ -32,6 +34,7 @@
 
 <script>
 import moment from 'moment';
+import Utils from '../utils.js';
 import Actor from './Actor.vue';
 
 export default {
@@ -61,6 +64,9 @@ export default {
     },
   },
   methods: {
+    mergeActors(build, powers) {
+      return Utils.mergeActors(build, powers);
+    },
     onTimelineEvent(e) {
       // calculate offset
       const timeline = this.$refs.timeline;

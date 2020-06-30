@@ -6,8 +6,13 @@
       <div v-for="(player, index) of team" :key="index" class="c-build-orders-simple__player">
 
         <div class="c-build-orders-simple__order">
-          <Actor v-for="(build, index) of player.build" :key="'build-' + index" :id="build.structure" :game_time="build.game_time" />
-          <Actor v-for="(support_power, index) of player.support_powers" :key="'support_power-' + index" :id="support_power.type" :game_time="support_power.game_time" type="support_power" />
+          <Actor
+            v-for="(build, index) of mergeActors(player.build, player.support_powers)"
+            :key="`${build.actor_type}-${index}`"
+            :id="build.actor_id"
+            :game_time="build.game_time"
+            :type="build.actor_type"
+          />
         </div>
 
       </div>
@@ -18,6 +23,7 @@
 </template>
 
 <script>
+import Utils from '../utils.js';
 import Actor from './Actor.vue';
 
 export default {
@@ -30,6 +36,11 @@ export default {
   components: {
     Actor,
   },
+  methods: {
+    mergeActors(build, powers) {
+      return Utils.mergeActors(build, powers);
+    }
+  }
 };
 </script>
 
