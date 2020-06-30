@@ -109,27 +109,9 @@ export default {
     },
   },
   methods: {
-    onAnalyticsReady(replayJSON) {
-      if (!replayJSON) {
-        return;
-      }
-
-      this.storedReplays.unshift({
-        versus: this.$store.getters['replayData/versus'],
-        modName: this.$store.getters['modData/modName'](replayJSON.mod),
-        timestamp: Date.now(),
-        data: replayJSON
-      });
-
-      this.storeReplays();
-    },
     onDeleteClicked(e) {
       e.preventDefault();
-      this.storedReplays.splice(e.target.id, 1);
-      this.storeReplays();
-    },
-    storeReplays() {
-      localStorage.setItem('storedReplays', JSON.stringify(this.storedReplays));
+      this.$storageManager.deleteReplay(e.target.id);
     },
     loadReplay(e) {
       if (this.isInputDisabled) {
@@ -152,7 +134,6 @@ export default {
       }
     },
     replayDataReady() {
-      EventBus.$off('AnalyticsReady', this.onAnalyticsReady);
       EventBus.$emit('ReplayDataReady', this.replayJSON);
     },
     setError(e) {
@@ -164,16 +145,8 @@ export default {
       this.errorMessage = null;
     },
   },
-  mounted() {
-    if (localStorage.getItem('storedReplays')) {
-      try {
-        this.storedReplays = JSON.parse(localStorage.getItem('storedReplays'));
-      } catch (e) {
-        localStorage.removeItem('storedReplays');
-      }
-    }
-
-    EventBus.$on('AnalyticsReady', this.onAnalyticsReady);
+  created() {
+    this.storedReplays = this.$storageManager.storedReplays;
   }
 };
 </script>

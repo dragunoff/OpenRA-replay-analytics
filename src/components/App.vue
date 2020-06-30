@@ -47,7 +47,6 @@ export default {
       this.registerReplayDataStore(replayJSON);
       this.$store.commit('settings/setCurrentMod', replayJSON.mod);
       this.$store.commit('settings/setAnalyticsReadyState', true);
-      EventBus.$emit('AnalyticsReady', replayJSON);
       this.$store.commit('settings/setLoadingState', false);
     },
     registerReplayDataStore(replayJSON) {

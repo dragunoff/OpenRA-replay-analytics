@@ -93,6 +93,7 @@ export default {
     },
     replayDataReady() {
       EventBus.$emit('ReplayDataReady', this.replayJSON);
+      this.$storageManager.storeReplay(this.replayJSON);
     },
     setError(e) {
       this.isValid = false;
