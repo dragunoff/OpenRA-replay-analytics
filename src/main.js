@@ -6,11 +6,13 @@ import App from './components/App.vue';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 import storageManager from './storage-manager.js';
+import replayDataManager from './replay-data-manager.js';
 
 Vue.config.productionTip = false
 Vue.use(BootstrapVue);
 Vue.use(VueMoment);
 Vue.prototype.$storageManager = storageManager();
+Vue.prototype.$replayDataManager = replayDataManager();
 
 new Vue({
   el: '#app',

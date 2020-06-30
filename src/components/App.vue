@@ -17,9 +17,6 @@
 </template>
 
 <script>
-import replayDataStore from '../store/modules/replayData';
-import { EventBus } from '../event-bus.js';
-
 import Navbar from './Navbar.vue';
 import HeaderDefault from './HeaderDefault.vue';
 import Header from './Header.vue';
@@ -41,21 +38,6 @@ export default {
     Footer,
     Input,
     Analytics,
-  },
-  methods: {
-    onReplayDataReady(replayJSON) {
-      this.registerReplayDataStore(replayJSON);
-      this.$store.commit('settings/setCurrentMod', replayJSON.mod);
-      this.$store.commit('settings/setAnalyticsReadyState', true);
-      this.$store.commit('settings/setLoadingState', false);
-    },
-    registerReplayDataStore(replayJSON) {
-      replayDataStore.state = replayJSON;
-      this.$store.registerModule('replayData', replayDataStore);
-    },
-  },
-  created() {
-    EventBus.$on('ReplayDataReady', this.onReplayDataReady);
   },
 };
 </script>

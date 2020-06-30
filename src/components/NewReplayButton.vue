@@ -3,7 +3,7 @@
     type="button"
     variant="outline-primary"
     size="sm"
-    @click="loadNewReplay"
+    @click="onClick"
   >
     Load New Replay
   </b-btn>
@@ -12,14 +12,8 @@
 <script>
 export default {
   methods: {
-    loadNewReplay() {
-      this.unregisterReplayDataStore();
-      this.$store.commit('settings/setAnalyticsReadyState', false);
-    },
-    unregisterReplayDataStore() {
-      if (this.$store.hasModule('replayData')) {
-        this.$store.unregisterModule('replayData');
-      }
+    onClick() {
+      this.$replayDataManager.loadNewReplay();
     },
   }
 };
