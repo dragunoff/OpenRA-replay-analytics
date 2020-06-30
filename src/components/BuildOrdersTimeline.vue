@@ -44,7 +44,10 @@ export default {
     };
   },
   props: {
-    teams: Object,
+    teams: {
+      type: Object,
+      required: true,
+    },
   },
   computed: {
     timelineSize() {

@@ -22,7 +22,10 @@ import Actor from './Actor.vue';
 
 export default {
   props: {
-    teams: Object,
+    teams: {
+      type: Object,
+      required: true,
+    },
   },
   components: {
     Actor,
