@@ -9,7 +9,6 @@
           <b-form-file
             v-model="file"
             accept=".orarep"
-            :required="true"
           ></b-form-file>
           <small class="form-text text-muted">
             Choose or drag and drop an <strong>.orarep</strong> file.
