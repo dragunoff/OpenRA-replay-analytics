@@ -25,11 +25,12 @@ export default {
     },
     name() {
       let name = '';
+      const gameType = this.$store.state.replayData.game.type;
 
       if (this.team === 'spectators' || (this.player && !this.player.is_player)) {
         name = 'Spectators';
       } else if (this.team === null || this.team === 'ffa') {
-        name = 'Free for All';
+        name = gameType === '1v1' ? 'Players' : 'Free for All';
       } else {
         name = `Team ${this.team}`;
       }

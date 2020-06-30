@@ -12,7 +12,7 @@
                 <div v-for="(player, index) of team" :key="index" class="c-tab-build-orders__player">
 
                     <div class="c-tab-build-orders__client">
-                        <ClientInfo :client="player" :showTeam="true" v-if="player.is_player" />
+                        <ClientInfo :client="player" :showTeam="!is1v1" v-if="player.is_player" />
                     </div>
 
                 </div>
@@ -39,6 +39,9 @@ import ClientInfo from './ClientInfo.vue';
 
 export default {
   computed: {
+    is1v1() {
+      return this.$store.state.replayData.game.type === '1v1';
+    },
     teams() {
       return this.$store.getters['replayData/players'];
     },
