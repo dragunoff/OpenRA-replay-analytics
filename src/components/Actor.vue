@@ -34,7 +34,7 @@ export default {
     },
     badge: {
       type: Number,
-      default: 0,
+      default: null,
     },
   },
   mounted() {
@@ -102,15 +102,15 @@ export default {
         return;
       }
 
-      const rectEl = el.getBoundingClientRect();
+      const rect = el.getBoundingClientRect();
       const rectPrevious = previous.getBoundingClientRect();
 
-      if (rectEl.left >= rectPrevious.right) {
+      if (rect.left >= rectPrevious.right || rect.bottom <= rectPrevious.top) {
         return;
       }
 
-      let diff = rectPrevious.top - rectEl.top;
-      let offset = diff + rectPrevious.height - rectPrevious.height * 0.2;
+      let diff = rectPrevious.top - rect.top;
+      let offset = diff + rectPrevious.height;
       el.style.top = offset + 'px';
     },
     cameoError() {
