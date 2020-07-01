@@ -22,6 +22,7 @@
 
 <script>
 import { EventBus } from '../event-bus.js';
+import Utils from '../utils.js';
 
 import Submit from './Submit.vue';
 
@@ -68,7 +69,7 @@ export default {
         }).then(
           response => response.json()
         ).then(replayJSON => {
-          this.replayJSON = replayJSON;
+          this.replayJSON = Utils.cleanUpBuild(replayJSON);
           this.replayDataReady();
         }).catch(e => {
           this.setError(e);

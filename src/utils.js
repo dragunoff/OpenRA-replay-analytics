@@ -29,5 +29,41 @@ export default {
     }
 
     return team;
+  },
+  // HACK: Try to work-around a bug where sometimes a building
+  // registers as being placed twice in quick succession
+  cleanUpBuild(replayJSON) {
+    if (replayJSON.game.options.cheats_enabled) {
+      return replayJSON;
+    }
+
+    const threshold = 300;
+
+    _.each(replayJSON.clients, (client, index) => {
+
+      _.reverse(client.build);
+
+      let prevStructure, prevTimestamp;
+
+      let cleanBuild = _.filter(client.build, build => {
+        if (
+          build.structure === prevStructure
+          && build.game_time.msec + threshold >= prevTimestamp
+        ) {
+          return false;
+        }
+
+        prevStructure = build.structure;
+        prevTimestamp = build.game_time.msec;
+
+        return true;
+      });
+
+      _.reverse(client.build);
+
+      replayJSON.clients[index].build = cleanBuild;
+    });
+
+    return replayJSON;
   }
 }
