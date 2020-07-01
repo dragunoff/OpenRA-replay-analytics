@@ -16,5 +16,18 @@ export default {
     });
 
     return merged;
+  },
+  getClientTeam(client) {
+    let team;
+
+    if (!client.team && client.is_player) {
+      team = 'ffa';
+    } else if (!client.team && !client.is_player) {
+      team = 'spectators';
+    } else {
+      team = client.team;
+    }
+
+    return team;
   }
 }

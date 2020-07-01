@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import Utils from '../../utils.js';
 
 const state = {};
 
@@ -15,23 +16,9 @@ const getters = {
     var teams = {};
     const clients = state.clients;
 
-    function getCurrentClientTeam(client) {
-      let team;
-
-      if (!client.team && client.is_player) {
-        team = 'ffa';
-      } else if (!client.team && !client.is_player) {
-        team = 'spectators';
-      } else {
-        team = client.team;
-      }
-
-      return team;
-    }
-
     // build object for teams
     _.forEach(clients, function(client) {
-      let team = getCurrentClientTeam(client);
+      const team = Utils.getClientTeam(client);
 
       if (Object.prototype.hasOwnProperty.call(teams, team)) {
         return;
@@ -44,7 +31,7 @@ const getters = {
 
     // add clients to teams
     _.forEach(clients, function(client) {
-      let team = getCurrentClientTeam(client);
+      const team = Utils.getClientTeam(client);
       teams[team].push(client);
     });
 
