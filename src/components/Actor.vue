@@ -1,5 +1,14 @@
 <template>
-  <div v-show="isFilteredIn" class="c-actor" :class="[typeClass, { 'has-error': hasCameoError }]" :title="popoverTitle" v-b-popover.hover.focus.bottom="name">
+  <div
+    v-show="isFilteredIn"
+    :class="[
+      'c-actor',
+      typeClass,
+      { 'is-offset': isOffset, 'has-error': hasCameoError }
+    ]"
+    :title="popoverTitle"
+    v-b-popover.hover.focus.bottom="name"
+  >
     <img class="c-actor__cameo" :src="cameoUrl" :alt="name" @error="cameoError($event)" :width="width" :height="height" />
     <span class="c-actor__badge h4" v-if="badge"><b-badge>{{ badge }}</b-badge></span>
   </div>
@@ -12,6 +21,7 @@ export default {
   data() {
     return {
       hasCameoError: false,
+      isOffset: false,
     };
   },
   props: {
@@ -93,7 +103,11 @@ export default {
   },
   methods: {
     unclump(el) {
+      // HACK: Both methods for adding the classname are here
+      // because in case of cameo error the class will be wiped
       el.classList.add('is-offset');
+      this.isOffset = true;
+
       el.style.left = this.offset;
 
       const previous = el.previousSibling;
