@@ -41,7 +41,6 @@ export default {
   data() {
     return {
       isTimelineScrolling: false,
-      timelineScrollRaf: false,
       offsetX: 0,
       mouseX: 0,
     };
