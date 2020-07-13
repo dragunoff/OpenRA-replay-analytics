@@ -1,5 +1,7 @@
 # OpenRA Replay Analytics
 
+Check out the fully-functional instance of the app at https://dragunoff.github.io/OpenRA-replay-analytics/.
+
 ## Greetings, Commander!
 
 This is a visualization tool for data extracted from [OpenRA](https://openra.net) replay files.
