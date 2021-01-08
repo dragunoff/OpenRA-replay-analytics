@@ -5,8 +5,16 @@
         {{ errorMessage }}
       </b-alert>
       <fieldset class="c-replay-file-input__fieldset" :disabled="isInputDisabled">
-        <b-form-group label="Replay JSON" label-for="input-replay-data">
-          <b-form-textarea name="replay-data" :rows="8" :max-rows="8" v-model="input" required :state="isValid"></b-form-textarea>
+        <b-form-group label="Replay JSON" label-for="input-replay-json">
+          <b-form-textarea
+            id="input-replay-json"
+            name="replay-data"
+            :rows="8"
+            :max-rows="8"
+            v-model="input"
+            required
+            :state="isValid"
+          ></b-form-textarea>
           <small class="form-text text-muted">
             Paste the JSON output of <strong>openra-ruby</strong> or <a href="data/sample/ra-1v1-sample.json" @click="loadSampleReplay($event)">load a sample 1v1 game</a>.
           </small>

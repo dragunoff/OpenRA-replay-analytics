@@ -5,8 +5,9 @@
         {{ errorMessage }}
       </b-alert>
       <fieldset class="c-replay-file-input__fieldset" :disabled="isInputDisabled">
-        <b-form-group label="Replay file" label-for="input-replay-data">
+        <b-form-group label="Replay file" label-for="input-replay-file">
           <b-form-file
+            id="input-replay-file"
             v-model="file"
             accept=".orarep"
           ></b-form-file>
