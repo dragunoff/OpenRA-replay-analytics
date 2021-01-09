@@ -8,9 +8,7 @@
 export default {
   computed: {
     spinnerUrl() {
-      let href = window.location.href.replace(/\/$/, '');
-
-      return href + '/assets/spinner.webp';
+      return './assets/spinner.webp';
     },
   },
 }

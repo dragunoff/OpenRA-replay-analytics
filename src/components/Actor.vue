@@ -86,7 +86,6 @@ export default {
       return `c-actor--${this.info.type}`;
     },
     cameoUrl() {
-      let href = window.location.href.replace(/\/$/, '');
       let mod = this.$store.state.replayData.mod;
 
       let filename = this.info.id + '.gif';
@@ -94,7 +93,7 @@ export default {
         filename = 'support_power-' + filename;
       }
 
-      return href + '/assets/mods/' + mod + '/cameos/' + filename;
+      return './assets/mods/' + mod + '/cameos/' + filename;
     },
     isFilteredIn() {
       let filters = this.$store.state.settings.buildOrderFilter;
