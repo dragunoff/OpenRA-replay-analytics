@@ -3,7 +3,7 @@
 
     <b-row>
 
-      <b-col sm="5" md="6" class="my-2">
+      <b-col sm="5" md="6">
 
         <h3 class="h3">Stored Replays ({{ storedReplays.length }})</h3>
 
@@ -13,7 +13,7 @@
 
       </b-col>
 
-      <b-col sm="5" md="6" class="my-2">
+      <b-col sm="5" md="6">
 
         <b-form-group
           v-if="hasStored"

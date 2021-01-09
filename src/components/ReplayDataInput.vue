@@ -1,28 +1,30 @@
 <template>
-  <div class="c-replay-data-input">
-    <b-form @submit="onSubmit($event)">
-      <b-alert variant="danger" dismissible :show="hasError">
-        {{ errorMessage }}
-      </b-alert>
-      <fieldset class="c-replay-file-input__fieldset" :disabled="isInputDisabled">
-        <b-form-group label="Replay JSON" label-for="input-replay-json">
-          <b-form-textarea
-            id="input-replay-json"
-            name="replay-data"
-            :rows="8"
-            :max-rows="8"
-            v-model="input"
-            required
-            :state="isValid"
-          ></b-form-textarea>
-          <small class="form-text text-muted">
-            Paste the JSON output of <strong>openra-ruby</strong> or <a href="data/sample/ra-1v1-sample.json" @click="loadSampleReplay($event)">load a sample 1v1 game</a>.
-          </small>
-        </b-form-group>
-        <Submit />
-      </fieldset>
-    </b-form>
-  </div>
+  <b-row>
+    <b-col lg="7">
+      <b-form @submit="onSubmit($event)">
+        <b-alert variant="danger" dismissible :show="hasError">
+          {{ errorMessage }}
+        </b-alert>
+        <fieldset :disabled="isInputDisabled">
+          <b-form-group label="Replay JSON" label-for="input-replay-json">
+            <b-form-textarea
+              id="input-replay-json"
+              name="replay-data"
+              :rows="8"
+              :max-rows="8"
+              v-model="input"
+              required
+              :state="isValid"
+            ></b-form-textarea>
+            <small class="form-text text-muted">
+              Paste the JSON output of <strong>openra-ruby</strong> or <a href="data/sample/ra-1v1-sample.json" @click="loadSampleReplay($event)">load a sample 1v1 game</a>.
+            </small>
+          </b-form-group>
+          <Submit />
+        </fieldset>
+      </b-form>
+    </b-col>
+  </b-row>
 </template>
 
 <script>
@@ -117,11 +119,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss">
-.c-replay-data-input {
-  &__fieldset {
-    max-width: 50rem;
-  }
-}
-</style>

@@ -1,24 +1,26 @@
 <template>
-  <div class="c-replay-file-input">
-    <b-form @submit="onSubmit($event)">
-      <b-alert variant="danger" dismissible :show="hasError">
-        {{ errorMessage }}
-      </b-alert>
-      <fieldset class="c-replay-file-input__fieldset" :disabled="isInputDisabled">
-        <b-form-group label="Replay file" label-for="input-replay-file">
-          <b-form-file
-            id="input-replay-file"
-            v-model="file"
-            accept=".orarep"
-          ></b-form-file>
-          <small class="form-text text-muted">
-            Choose or drag and drop an <strong>.orarep</strong> file.
-          </small>
-        </b-form-group>
-        <Submit />
-      </fieldset>
-    </b-form>
-  </div>
+  <b-row>
+    <b-col lg="7">
+      <b-form @submit="onSubmit($event)">
+        <b-alert variant="danger" dismissible :show="hasError">
+          {{ errorMessage }}
+        </b-alert>
+        <fieldset :disabled="isInputDisabled">
+          <b-form-group label="Replay file" label-for="input-replay-file">
+            <b-form-file
+              id="input-replay-file"
+              v-model="file"
+              accept=".orarep"
+            ></b-form-file>
+            <small class="form-text text-muted">
+              Choose or drag and drop an <strong>.orarep</strong> file.
+            </small>
+          </b-form-group>
+          <Submit />
+        </fieldset>
+      </b-form>
+    </b-col>
+  </b-row>
 </template>
 
 <script>
@@ -93,11 +95,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss">
-.c-replay-file-input {
-  &__fieldset {
-    max-width: 50rem;
-  }
-}
-</style>
