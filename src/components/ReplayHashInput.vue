@@ -1,34 +1,39 @@
 <template>
-  <div class="c-replay-data-input">
-    <b-form @submit="onSubmit($event)">
-      <b-alert variant="danger" dismissible :show="hasError">
-        {{ errorMessage }}
-      </b-alert>
-      <fieldset class="c-replay-file-input__fieldset" :disabled="isInputDisabled">
-        <b-form-group label="Replay hash" label-for="input-replay-hash">
-          <b-form-input
-            id="input-replay-hash"
-            type="text"
-            name="hash"
-            v-model="hash"
-            required
-            :state="isValid"
-          ></b-form-input>
-        </b-form-group>
-        <b-form-group label="Source" label-for="input-replay-hash-source">
-          <b-form-radio-group
-            id="input-replay-hash-source"
-            v-model="source"
-            name="input-replay-hash-source"
-          >
-            <b-form-radio value="oraladder">ORA Ladder</b-form-radio>
-            <b-form-radio value="ragl">RAGL</b-form-radio>
-          </b-form-radio-group>
-        </b-form-group>
-        <Submit />
-      </fieldset>
-    </b-form>
-  </div>
+  <b-row>
+    <b-col lg="7">
+      <b-form @submit="onSubmit($event)">
+        <b-alert variant="danger" dismissible :show="hasError">
+          {{ errorMessage }}
+        </b-alert>
+        <fieldset :disabled="isInputDisabled">
+          <b-form-group label="Replay hash" label-for="input-replay-hash">
+            <b-form-input
+              id="input-replay-hash"
+              type="text"
+              name="hash"
+              v-model="hash"
+              required
+              :state="isValid"
+            ></b-form-input>
+            <small class="form-text text-muted">
+              Paste the <strong>replay hash</strong> from <a href="http://oraladder.net/">ORALadder</a> or <a href="http://ragl.org/">RAGL</a>.
+            </small>
+          </b-form-group>
+          <b-form-group label="Source" label-for="input-replay-hash-source">
+            <b-form-radio-group
+              id="input-replay-hash-source"
+              v-model="source"
+              name="input-replay-hash-source"
+            >
+              <b-form-radio value="oraladder">ORA Ladder</b-form-radio>
+              <b-form-radio value="ragl">RAGL</b-form-radio>
+            </b-form-radio-group>
+          </b-form-group>
+          <Submit />
+        </fieldset>
+      </b-form>
+    </b-col>
+  </b-row>
 </template>
 
 <script>
@@ -101,11 +106,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss">
-.c-replay-data-input {
-  &__fieldset {
-    max-width: 50rem;
-  }
-}
-</style>

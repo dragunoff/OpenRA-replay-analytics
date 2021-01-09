@@ -22,12 +22,21 @@ export default {
   components: {
     Spinner,
   },
+  props: {
+    isButton: {
+      type: Boolean,
+      default: true,
+    },
+    defaultLabel: {
+      type: String,
+      default: 'Submit',
+    },
+  },
   data() {
     return {
-      defaultLabel: 'Submit',
-      loadingLabel: 'Submit',
       isTakingTooLong: false,
       delay: 5000,
+      loadingLabel: 'Submit',
     }
   },
   computed: {
@@ -35,7 +44,7 @@ export default {
       return this.$store.state.settings.isLoading;
     },
     isInputDisabled() {
-      return this.$store.state.settings.isInputDisabled;
+      return !this.isButton || this.$store.state.settings.isInputDisabled;
     },
   },
   methods: {
@@ -71,6 +80,11 @@ export default {
       }
 
       setTimeout(this.updateLabel, this.delay, startTime);
+    }
+  },
+  mounted() {
+    if(!this.isButton) {
+      this.onClick();
     }
   }
 };
