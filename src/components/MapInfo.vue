@@ -26,7 +26,7 @@ export default {
           return response.clone().json();
         }
 
-        throw new Error("Error fetching map data.");
+        throw new Error(`Failed to fetch map data.`);
       })
       .then(json => {
         this.map = json[0];

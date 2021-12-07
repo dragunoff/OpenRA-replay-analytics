@@ -66,7 +66,7 @@ export default {
           if (response.ok) {
             return response.text();
           }
-          throw new Error('Error fetching sample replay data.');
+          throw new Error(`Failed to fetch sample replay data.`);
         })
         .then(replayDataJSON => {
           this.input = replayDataJSON;

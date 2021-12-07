@@ -47,7 +47,13 @@ export default {
       // TODO: Move this to a service and reuse in all API calls
       setTimeout(() => {
         fetch(`${process.env.VUE_APP_OPENRA_API_ENDPOINT}/${this.source}/${this.hash}`).then(
-          response => response.json()
+          response => {
+            if (response.ok) {
+              return response.json();
+            }
+
+            throw new Error(`Failed to fetch data from openra-api.com (${response.status} ${response.statusText})`);
+          }
         ).then(replayJSON => {
           this.replayJSON = Utils.cleanUpBuild(replayJSON);
           this.replayDataReady();

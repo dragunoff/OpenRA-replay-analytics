@@ -123,7 +123,7 @@ export default {
 
       try {
         if (!e.data) {
-          throw new Error('Error loading stored replay data.');
+          throw new Error(`Failed to load stored replay data.`);
         }
 
         this.replayJSON = e.data;
