@@ -1,0 +1,1772 @@
+{
+  "mod": "ra",
+  "version": "release-20200503",
+  "server_name": "64H Competitive - RA - II",
+  "map": {
+    "name": "Teared Strait RAGL S9",
+    "hash": "4598f127e5b0ded9a7a6f16b2f3c68eb321d4a13"
+  },
+  "game": {
+    "type": "1v1",
+    "start_time": "2020-05-18T15:58:35+00:00",
+    "end_time": "2020-05-18T16:18:55+00:00",
+    "duration": {
+      "formatted": "00:20:20",
+      "msec": 1220000
+    },
+    "options": {
+      "explored_map": true,
+      "speed": "default",
+      "starting_cash": 5000,
+      "starting_units": "none",
+      "fog_enabled": true,
+      "cheats_enabled": false,
+      "kill_bounty_enabled": true,
+      "allow_undeploy": true,
+      "crates_enabled": false,
+      "build_off_allies": true,
+      "restrict_build_radius": true,
+      "short_game": true,
+      "techlevel": "unrestricted"
+    }
+  },
+  "clients": [
+    {
+      "index": "35",
+      "player_index": 3,
+      "name": "Alpha",
+      "fingerprint": "",
+      "preferred_color": "E6143F",
+      "color": "E6143F",
+      "spawn": {
+        "random": true,
+        "point": "0"
+      },
+      "faction": {
+        "random": false,
+        "chosen": "ukraine",
+        "actual": "ukraine"
+      },
+      "ip": null,
+      "team": null,
+      "is_bot": false,
+      "is_admin": true,
+      "is_player": true,
+      "is_winner": false,
+      "outcome_time": "2020-05-23T13:06:39+00:00",
+      "build": [
+        {
+          "structure": "powr",
+          "game_time": {
+            "formatted": "00:00:09",
+            "msec": 9840
+          },
+          "placement": {
+            "x": 36,
+            "y": 29,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "barr",
+          "game_time": {
+            "formatted": "00:00:23",
+            "msec": 23520
+          },
+          "placement": {
+            "x": 30,
+            "y": 37,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "proc",
+          "game_time": {
+            "formatted": "00:00:58",
+            "msec": 58320
+          },
+          "placement": {
+            "x": 27,
+            "y": 39,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "proc",
+          "game_time": {
+            "formatted": "00:01:36",
+            "msec": 96960
+          },
+          "placement": {
+            "x": 39,
+            "y": 27,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "powr",
+          "game_time": {
+            "formatted": "00:01:45",
+            "msec": 105240
+          },
+          "placement": {
+            "x": 29,
+            "y": 29,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "weap",
+          "game_time": {
+            "formatted": "00:02:34",
+            "msec": 154920
+          },
+          "placement": {
+            "x": 25,
+            "y": 26,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "proc",
+          "game_time": {
+            "formatted": "00:03:09",
+            "msec": 189840
+          },
+          "placement": {
+            "x": 37,
+            "y": 24,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "fix",
+          "game_time": {
+            "formatted": "00:03:43",
+            "msec": 223560
+          },
+          "placement": {
+            "x": 25,
+            "y": 30,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "powr",
+          "game_time": {
+            "formatted": "00:03:55",
+            "msec": 235320
+          },
+          "placement": {
+            "x": 34,
+            "y": 23,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "ftur",
+          "game_time": {
+            "formatted": "00:03:56",
+            "msec": 236280
+          },
+          "placement": {
+            "x": 40,
+            "y": 23,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "barr",
+          "game_time": {
+            "formatted": "00:04:10",
+            "msec": 250320
+          },
+          "placement": {
+            "x": 29,
+            "y": 23,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "barr",
+          "game_time": {
+            "formatted": "00:04:24",
+            "msec": 264240
+          },
+          "placement": {
+            "x": 43,
+            "y": 30,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "barr",
+          "game_time": {
+            "formatted": "00:04:38",
+            "msec": 278400
+          },
+          "placement": {
+            "x": 31,
+            "y": 43,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "powr",
+          "game_time": {
+            "formatted": "00:04:49",
+            "msec": 289680
+          },
+          "placement": {
+            "x": 28,
+            "y": 45,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "proc",
+          "game_time": {
+            "formatted": "00:05:25",
+            "msec": 325800
+          },
+          "placement": {
+            "x": 25,
+            "y": 68,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "powr",
+          "game_time": {
+            "formatted": "00:05:34",
+            "msec": 334680
+          },
+          "placement": {
+            "x": 32,
+            "y": 70,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "tsla",
+          "game_time": {
+            "formatted": "00:05:43",
+            "msec": 343320
+          },
+          "placement": {
+            "x": 35,
+            "y": 71,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "barr",
+          "game_time": {
+            "formatted": "00:05:48",
+            "msec": 348360
+          },
+          "placement": {
+            "x": 31,
+            "y": 62,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "tsla",
+          "game_time": {
+            "formatted": "00:06:17",
+            "msec": 377640
+          },
+          "placement": {
+            "x": 35,
+            "y": 72,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "barr",
+          "game_time": {
+            "formatted": "00:06:24",
+            "msec": 384000
+          },
+          "placement": {
+            "x": 27,
+            "y": 64,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "barr",
+          "game_time": {
+            "formatted": "00:06:40",
+            "msec": 400080
+          },
+          "placement": {
+            "x": 34,
+            "y": 60,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "powr",
+          "game_time": {
+            "formatted": "00:06:52",
+            "msec": 412920
+          },
+          "placement": {
+            "x": 35,
+            "y": 72,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "tsla",
+          "game_time": {
+            "formatted": "00:07:11",
+            "msec": 431040
+          },
+          "placement": {
+            "x": 37,
+            "y": 75,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "barr",
+          "game_time": {
+            "formatted": "00:07:22",
+            "msec": 442800
+          },
+          "placement": {
+            "x": 38,
+            "y": 68,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "barr",
+          "game_time": {
+            "formatted": "00:07:51",
+            "msec": 471840
+          },
+          "placement": {
+            "x": 36,
+            "y": 75,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "powr",
+          "game_time": {
+            "formatted": "00:08:02",
+            "msec": 482160
+          },
+          "placement": {
+            "x": 34,
+            "y": 72,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "tsla",
+          "game_time": {
+            "formatted": "00:08:06",
+            "msec": 486000
+          },
+          "placement": {
+            "x": 39,
+            "y": 78,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "powr",
+          "game_time": {
+            "formatted": "00:08:10",
+            "msec": 490200
+          },
+          "placement": {
+            "x": 24,
+            "y": 61,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "proc",
+          "game_time": {
+            "formatted": "00:08:40",
+            "msec": 520680
+          },
+          "placement": {
+            "x": 56,
+            "y": 40,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "powr",
+          "game_time": {
+            "formatted": "00:08:48",
+            "msec": 528600
+          },
+          "placement": {
+            "x": 60,
+            "y": 37,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "ftur",
+          "game_time": {
+            "formatted": "00:08:56",
+            "msec": 536280
+          },
+          "placement": {
+            "x": 57,
+            "y": 44,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "barr",
+          "game_time": {
+            "formatted": "00:09:00",
+            "msec": 540720
+          },
+          "placement": {
+            "x": 63,
+            "y": 38,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "powr",
+          "game_time": {
+            "formatted": "00:09:08",
+            "msec": 548520
+          },
+          "placement": {
+            "x": 64,
+            "y": 42,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "ftur",
+          "game_time": {
+            "formatted": "00:09:09",
+            "msec": 549360
+          },
+          "placement": {
+            "x": 65,
+            "y": 46,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "barr",
+          "game_time": {
+            "formatted": "00:09:20",
+            "msec": 560520
+          },
+          "placement": {
+            "x": 57,
+            "y": 34,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "ftur",
+          "game_time": {
+            "formatted": "00:09:23",
+            "msec": 563400
+          },
+          "placement": {
+            "x": 60,
+            "y": 36,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "ftur",
+          "game_time": {
+            "formatted": "00:09:38",
+            "msec": 578280
+          },
+          "placement": {
+            "x": 54,
+            "y": 41,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "ftur",
+          "game_time": {
+            "formatted": "00:09:55",
+            "msec": 595320
+          },
+          "placement": {
+            "x": 60,
+            "y": 36,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "ftur",
+          "game_time": {
+            "formatted": "00:10:11",
+            "msec": 611280
+          },
+          "placement": {
+            "x": 59,
+            "y": 39,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "tsla",
+          "game_time": {
+            "formatted": "00:10:37",
+            "msec": 637440
+          },
+          "placement": {
+            "x": 57,
+            "y": 43,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "dome",
+          "game_time": {
+            "formatted": "00:10:45",
+            "msec": 645360
+          },
+          "placement": {
+            "x": 40,
+            "y": 32,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "proc",
+          "game_time": {
+            "formatted": "00:11:14",
+            "msec": 674880
+          },
+          "placement": {
+            "x": 34,
+            "y": 76,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "tsla",
+          "game_time": {
+            "formatted": "00:11:15",
+            "msec": 675600
+          },
+          "placement": {
+            "x": 38,
+            "y": 78,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "apwr",
+          "game_time": {
+            "formatted": "00:11:32",
+            "msec": 692280
+          },
+          "placement": {
+            "x": 54,
+            "y": 31,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "tsla",
+          "game_time": {
+            "formatted": "00:11:40",
+            "msec": 700920
+          },
+          "placement": {
+            "x": 57,
+            "y": 44,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "tsla",
+          "game_time": {
+            "formatted": "00:12:08",
+            "msec": 728280
+          },
+          "placement": {
+            "x": 38,
+            "y": 75,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "tsla",
+          "game_time": {
+            "formatted": "00:12:34",
+            "msec": 754680
+          },
+          "placement": {
+            "x": 65,
+            "y": 37,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "tsla",
+          "game_time": {
+            "formatted": "00:13:01",
+            "msec": 781440
+          },
+          "placement": {
+            "x": 61,
+            "y": 40,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "tsla",
+          "game_time": {
+            "formatted": "00:13:27",
+            "msec": 807960
+          },
+          "placement": {
+            "x": 60,
+            "y": 35,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "apwr",
+          "game_time": {
+            "formatted": "00:14:04",
+            "msec": 844080
+          },
+          "placement": {
+            "x": 22,
+            "y": 65,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "tsla",
+          "game_time": {
+            "formatted": "00:14:06",
+            "msec": 846120
+          },
+          "placement": {
+            "x": 36,
+            "y": 75,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "proc",
+          "game_time": {
+            "formatted": "00:15:08",
+            "msec": 908400
+          },
+          "placement": {
+            "x": 63,
+            "y": 21,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "proc",
+          "game_time": {
+            "formatted": "00:15:51",
+            "msec": 951720
+          },
+          "placement": {
+            "x": 65,
+            "y": 18,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "apwr",
+          "game_time": {
+            "formatted": "00:16:08",
+            "msec": 968520
+          },
+          "placement": {
+            "x": 33,
+            "y": 76,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "sam",
+          "game_time": {
+            "formatted": "00:16:22",
+            "msec": 982920
+          },
+          "placement": {
+            "x": 61,
+            "y": 27,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "sam",
+          "game_time": {
+            "formatted": "00:16:46",
+            "msec": 1006560
+          },
+          "placement": {
+            "x": 31,
+            "y": 74,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "proc",
+          "game_time": {
+            "formatted": "00:16:48",
+            "msec": 1008720
+          },
+          "placement": {
+            "x": 29,
+            "y": 76,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "afld.ukraine",
+          "game_time": {
+            "formatted": "00:17:01",
+            "msec": 1021440
+          },
+          "placement": {
+            "x": 46,
+            "y": 28,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "tsla",
+          "game_time": {
+            "formatted": "00:17:19",
+            "msec": 1039320
+          },
+          "placement": {
+            "x": 60,
+            "y": 38,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "apwr",
+          "game_time": {
+            "formatted": "00:17:27",
+            "msec": 1047120
+          },
+          "placement": {
+            "x": 67,
+            "y": 25,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "tsla",
+          "game_time": {
+            "formatted": "00:17:53",
+            "msec": 1073400
+          },
+          "placement": {
+            "x": 71,
+            "y": 28,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "stek",
+          "game_time": {
+            "formatted": "00:18:05",
+            "msec": 1085760
+          },
+          "placement": {
+            "x": 55,
+            "y": 21,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "tsla",
+          "game_time": {
+            "formatted": "00:18:19",
+            "msec": 1099080
+          },
+          "placement": {
+            "x": 58,
+            "y": 33,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "tsla",
+          "game_time": {
+            "formatted": "00:18:45",
+            "msec": 1125720
+          },
+          "placement": {
+            "x": 70,
+            "y": 29,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "apwr",
+          "game_time": {
+            "formatted": "00:19:01",
+            "msec": 1141080
+          },
+          "placement": {
+            "x": 31,
+            "y": 79,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "ftur",
+          "game_time": {
+            "formatted": "00:19:24",
+            "msec": 1164360
+          },
+          "placement": {
+            "x": 21,
+            "y": 63,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "proc",
+          "game_time": {
+            "formatted": "00:19:31",
+            "msec": 1171680
+          },
+          "placement": {
+            "x": 25,
+            "y": 72,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "ftur",
+          "game_time": {
+            "formatted": "00:19:41",
+            "msec": 1181640
+          },
+          "placement": {
+            "x": 21,
+            "y": 65,
+            "layer": 0
+          }
+        }
+      ],
+      "support_powers": [
+        {
+          "type": "spy_plane",
+          "game_time": {
+            "formatted": "00:19:39",
+            "msec": 1179720
+          },
+          "placement": {
+            "x": 77,
+            "y": 77,
+            "layer": 0
+          },
+          "extra_placement": null
+        }
+      ]
+    },
+    {
+      "index": "38",
+      "player_index": 4,
+      "name": "Foxtrot",
+      "fingerprint": "",
+      "preferred_color": "1AADB1",
+      "color": "1AADB1",
+      "spawn": {
+        "random": true,
+        "point": "0"
+      },
+      "faction": {
+        "random": true,
+        "chosen": "random",
+        "actual": "ukraine"
+      },
+      "ip": null,
+      "team": null,
+      "is_bot": false,
+      "is_admin": false,
+      "is_player": true,
+      "is_winner": true,
+      "outcome_time": "2020-05-23T13:06:39+00:00",
+      "build": [
+        {
+          "structure": "powr",
+          "game_time": {
+            "formatted": "00:00:09",
+            "msec": 9960
+          },
+          "placement": {
+            "x": 69,
+            "y": 76,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "barr",
+          "game_time": {
+            "formatted": "00:00:23",
+            "msec": 23280
+          },
+          "placement": {
+            "x": 75,
+            "y": 68,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "proc",
+          "game_time": {
+            "formatted": "00:00:59",
+            "msec": 59760
+          },
+          "placement": {
+            "x": 77,
+            "y": 64,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "proc",
+          "game_time": {
+            "formatted": "00:01:36",
+            "msec": 96000
+          },
+          "placement": {
+            "x": 66,
+            "y": 78,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "powr",
+          "game_time": {
+            "formatted": "00:01:44",
+            "msec": 104400
+          },
+          "placement": {
+            "x": 75,
+            "y": 77,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "weap",
+          "game_time": {
+            "formatted": "00:02:33",
+            "msec": 153240
+          },
+          "placement": {
+            "x": 77,
+            "y": 71,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "powr",
+          "game_time": {
+            "formatted": "00:02:41",
+            "msec": 161640
+          },
+          "placement": {
+            "x": 78,
+            "y": 81,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "proc",
+          "game_time": {
+            "formatted": "00:03:24",
+            "msec": 204120
+          },
+          "placement": {
+            "x": 81,
+            "y": 85,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "fix",
+          "game_time": {
+            "formatted": "00:04:10",
+            "msec": 250440
+          },
+          "placement": {
+            "x": 79,
+            "y": 75,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "powr",
+          "game_time": {
+            "formatted": "00:04:36",
+            "msec": 276240
+          },
+          "placement": {
+            "x": 79,
+            "y": 68,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "ftur",
+          "game_time": {
+            "formatted": "00:04:50",
+            "msec": 290520
+          },
+          "placement": {
+            "x": 75,
+            "y": 62,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "dome",
+          "game_time": {
+            "formatted": "00:05:24",
+            "msec": 324480
+          },
+          "placement": {
+            "x": 69,
+            "y": 72,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "afld.ukraine",
+          "game_time": {
+            "formatted": "00:06:15",
+            "msec": 375960
+          },
+          "placement": {
+            "x": 73,
+            "y": 65,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "tsla",
+          "game_time": {
+            "formatted": "00:06:30",
+            "msec": 390120
+          },
+          "placement": {
+            "x": 47,
+            "y": 69,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "apwr",
+          "game_time": {
+            "formatted": "00:06:32",
+            "msec": 392160
+          },
+          "placement": {
+            "x": 53,
+            "y": 64,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "barr",
+          "game_time": {
+            "formatted": "00:06:48",
+            "msec": 408120
+          },
+          "placement": {
+            "x": 47,
+            "y": 64,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "ftur",
+          "game_time": {
+            "formatted": "00:06:50",
+            "msec": 410640
+          },
+          "placement": {
+            "x": 47,
+            "y": 68,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "barr",
+          "game_time": {
+            "formatted": "00:06:59",
+            "msec": 419880
+          },
+          "placement": {
+            "x": 53,
+            "y": 68,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "proc",
+          "game_time": {
+            "formatted": "00:07:34",
+            "msec": 454920
+          },
+          "placement": {
+            "x": 49,
+            "y": 61,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "proc",
+          "game_time": {
+            "formatted": "00:08:32",
+            "msec": 512880
+          },
+          "placement": {
+            "x": 67,
+            "y": 47,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "tsla",
+          "game_time": {
+            "formatted": "00:09:13",
+            "msec": 553440
+          },
+          "placement": {
+            "x": 69,
+            "y": 43,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "proc",
+          "game_time": {
+            "formatted": "00:09:23",
+            "msec": 563520
+          },
+          "placement": {
+            "x": 74,
+            "y": 41,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "apwr",
+          "game_time": {
+            "formatted": "00:09:39",
+            "msec": 579840
+          },
+          "placement": {
+            "x": 72,
+            "y": 37,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "tsla",
+          "game_time": {
+            "formatted": "00:09:50",
+            "msec": 590280
+          },
+          "placement": {
+            "x": 65,
+            "y": 46,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "ftur",
+          "game_time": {
+            "formatted": "00:10:17",
+            "msec": 617280
+          },
+          "placement": {
+            "x": 66,
+            "y": 45,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "weap",
+          "game_time": {
+            "formatted": "00:10:27",
+            "msec": 627600
+          },
+          "placement": {
+            "x": 68,
+            "y": 40,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "apwr",
+          "game_time": {
+            "formatted": "00:10:56",
+            "msec": 656880
+          },
+          "placement": {
+            "x": 72,
+            "y": 48,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "barr",
+          "game_time": {
+            "formatted": "00:11:13",
+            "msec": 673200
+          },
+          "placement": {
+            "x": 76,
+            "y": 37,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "barr",
+          "game_time": {
+            "formatted": "00:11:27",
+            "msec": 687960
+          },
+          "placement": {
+            "x": 73,
+            "y": 34,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "apwr",
+          "game_time": {
+            "formatted": "00:11:55",
+            "msec": 715440
+          },
+          "placement": {
+            "x": 76,
+            "y": 50,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "ftur",
+          "game_time": {
+            "formatted": "00:12:13",
+            "msec": 733200
+          },
+          "placement": {
+            "x": 51,
+            "y": 72,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "weap",
+          "game_time": {
+            "formatted": "00:12:52",
+            "msec": 772200
+          },
+          "placement": {
+            "x": 78,
+            "y": 42,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "afld.ukraine",
+          "game_time": {
+            "formatted": "00:13:03",
+            "msec": 783960
+          },
+          "placement": {
+            "x": 76,
+            "y": 45,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "ftur",
+          "game_time": {
+            "formatted": "00:13:27",
+            "msec": 807360
+          },
+          "placement": {
+            "x": 66,
+            "y": 40,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "proc",
+          "game_time": {
+            "formatted": "00:13:42",
+            "msec": 822240
+          },
+          "placement": {
+            "x": 44,
+            "y": 64,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "ftur",
+          "game_time": {
+            "formatted": "00:13:43",
+            "msec": 823200
+          },
+          "placement": {
+            "x": 42,
+            "y": 62,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "ftur",
+          "game_time": {
+            "formatted": "00:14:03",
+            "msec": 843600
+          },
+          "placement": {
+            "x": 72,
+            "y": 32,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "proc",
+          "game_time": {
+            "formatted": "00:14:13",
+            "msec": 853320
+          },
+          "placement": {
+            "x": 75,
+            "y": 32,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "ftur",
+          "game_time": {
+            "formatted": "00:14:26",
+            "msec": 866640
+          },
+          "placement": {
+            "x": 51,
+            "y": 65,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "apwr",
+          "game_time": {
+            "formatted": "00:14:40",
+            "msec": 880680
+          },
+          "placement": {
+            "x": 78,
+            "y": 36,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "ftur",
+          "game_time": {
+            "formatted": "00:14:48",
+            "msec": 888360
+          },
+          "placement": {
+            "x": 75,
+            "y": 30,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "stek",
+          "game_time": {
+            "formatted": "00:15:18",
+            "msec": 918960
+          },
+          "placement": {
+            "x": 80,
+            "y": 51,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "tsla",
+          "game_time": {
+            "formatted": "00:15:21",
+            "msec": 921480
+          },
+          "placement": {
+            "x": 47,
+            "y": 71,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "apwr",
+          "game_time": {
+            "formatted": "00:15:34",
+            "msec": 934440
+          },
+          "placement": {
+            "x": 55,
+            "y": 71,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "apwr",
+          "game_time": {
+            "formatted": "00:15:46",
+            "msec": 946680
+          },
+          "placement": {
+            "x": 78,
+            "y": 40,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "barr",
+          "game_time": {
+            "formatted": "00:16:00",
+            "msec": 960120
+          },
+          "placement": {
+            "x": 57,
+            "y": 68,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "ftur",
+          "game_time": {
+            "formatted": "00:16:11",
+            "msec": 971760
+          },
+          "placement": {
+            "x": 75,
+            "y": 31,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "barr",
+          "game_time": {
+            "formatted": "00:16:27",
+            "msec": 987120
+          },
+          "placement": {
+            "x": 48,
+            "y": 71,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "ftur",
+          "game_time": {
+            "formatted": "00:16:28",
+            "msec": 988320
+          },
+          "placement": {
+            "x": 46,
+            "y": 75,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "afld.ukraine",
+          "game_time": {
+            "formatted": "00:16:44",
+            "msec": 1004280
+          },
+          "placement": {
+            "x": 59,
+            "y": 66,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "ftur",
+          "game_time": {
+            "formatted": "00:17:26",
+            "msec": 1046400
+          },
+          "placement": {
+            "x": 67,
+            "y": 43,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "ftur",
+          "game_time": {
+            "formatted": "00:17:39",
+            "msec": 1059840
+          },
+          "placement": {
+            "x": 66,
+            "y": 43,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "iron",
+          "game_time": {
+            "formatted": "00:18:15",
+            "msec": 1095000
+          },
+          "placement": {
+            "x": 82,
+            "y": 44,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "ftur",
+          "game_time": {
+            "formatted": "00:18:37",
+            "msec": 1117320
+          },
+          "placement": {
+            "x": 74,
+            "y": 35,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "ftur",
+          "game_time": {
+            "formatted": "00:18:53",
+            "msec": 1133160
+          },
+          "placement": {
+            "x": 66,
+            "y": 39,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "proc",
+          "game_time": {
+            "formatted": "00:19:14",
+            "msec": 1154160
+          },
+          "placement": {
+            "x": 65,
+            "y": 42,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "weap",
+          "game_time": {
+            "formatted": "00:20:01",
+            "msec": 1201200
+          },
+          "placement": {
+            "x": 62,
+            "y": 39,
+            "layer": 0
+          }
+        },
+        {
+          "structure": "ftur",
+          "game_time": {
+            "formatted": "00:20:03",
+            "msec": 1203480
+          },
+          "placement": {
+            "x": 60,
+            "y": 37,
+            "layer": 0
+          }
+        }
+      ],
+      "support_powers": [
+        {
+          "type": "spy_plane",
+          "game_time": {
+            "formatted": "00:08:54",
+            "msec": 534960
+          },
+          "placement": {
+            "x": 36,
+            "y": 64,
+            "layer": 0
+          },
+          "extra_placement": null
+        },
+        {
+          "type": "spy_plane",
+          "game_time": {
+            "formatted": "00:11:34",
+            "msec": 694560
+          },
+          "placement": {
+            "x": 38,
+            "y": 70,
+            "layer": 0
+          },
+          "extra_placement": null
+        },
+        {
+          "type": "parabombs",
+          "game_time": {
+            "formatted": "00:11:45",
+            "msec": 705120
+          },
+          "placement": {
+            "x": 37,
+            "y": 78,
+            "layer": 0
+          },
+          "extra_placement": null
+        },
+        {
+          "type": "paratroopers",
+          "game_time": {
+            "formatted": "00:13:00",
+            "msec": 780120
+          },
+          "placement": {
+            "x": 23,
+            "y": 44,
+            "layer": 0
+          },
+          "extra_placement": null
+        },
+        {
+          "type": "spy_plane",
+          "game_time": {
+            "formatted": "00:14:09",
+            "msec": 849480
+          },
+          "placement": {
+            "x": 29,
+            "y": 69,
+            "layer": 0
+          },
+          "extra_placement": null
+        },
+        {
+          "type": "spy_plane",
+          "game_time": {
+            "formatted": "00:16:42",
+            "msec": 1002600
+          },
+          "placement": {
+            "x": 34,
+            "y": 78,
+            "layer": 0
+          },
+          "extra_placement": null
+        },
+        {
+          "type": "parabombs",
+          "game_time": {
+            "formatted": "00:18:03",
+            "msec": 1083480
+          },
+          "placement": {
+            "x": 76,
+            "y": 30,
+            "layer": 0
+          },
+          "extra_placement": null
+        },
+        {
+          "type": "paratroopers",
+          "game_time": {
+            "formatted": "00:19:57",
+            "msec": 1197240
+          },
+          "placement": {
+            "x": 21,
+            "y": 23,
+            "layer": 0
+          },
+          "extra_placement": null
+        }
+      ]
+    }
+  ],
+  "chat": [
+    {
+      "channel": "server",
+      "name": null,
+      "message": "Welcome to the [64H] Competitive Servers.\r\n[AR] rule scheme is automatically set."
+    },
+    {
+      "channel": "server",
+      "name": null,
+      "message": "This map contains custom rules. Game experience may change."
+    },
+    {
+      "channel": "server",
+      "name": null,
+      "message": "This server requires at least two human players to start a match."
+    },
+    {
+      "channel": "global",
+      "name": "Alpha",
+      "message": "Hey!"
+    },
+    {
+      "channel": "global",
+      "name": "Foxtrot",
+      "message": "heyho!"
+    },
+    {
+      "channel": "global",
+      "name": "Foxtrot",
+      "message": "glhf!"
+    },
+    {
+      "channel": "global",
+      "name": "Alpha",
+      "message": "glhf!"
+    },
+    {
+      "channel": "global",
+      "name": "Foxtrot",
+      "message": "glhf"
+    },
+    {
+      "channel": "global",
+      "name": "Alpha",
+      "message": "yeah, gg"
+    },
+    {
+      "channel": "global",
+      "name": "Foxtrot",
+      "message": "gg"
+    }
+  ]
+}
