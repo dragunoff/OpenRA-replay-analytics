@@ -14,6 +14,6 @@ git add -A
 git commit -m 'deploy'
 
 # deploying to https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:dragunoff/OpenRA-replay-analytics.git master:gh-pages
+git push -f git@github.com:dragunoff/OpenRA-replay-analytics.git main:gh-pages
 
 cd -
