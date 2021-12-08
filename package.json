@@ -1,7 +1,7 @@
 {
   "name": "openra-replay-analytics",
   "description": "OpenRA Replay Analytics",
-  "version": "2.2.0",
+  "version": "2.3.1",
   "author": "Ivaylo Draganov <dragunoff@gmail.com>",
   "private": true,
   "scripts": {
